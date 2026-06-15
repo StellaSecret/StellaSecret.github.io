@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.get_login_creds",
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.stellasecret.asthmetrack",
+      "sha256_cert_fingerprints": [
+        "F2:BC:6F:51:9A:23:1A:FE:C5:C0:8F:C3:14:94:F9:2A:0E:5E:6E:10:67:C2:24:07:7B:28:24:3D:FD:8F:C3:47"
+      ]
+    }
+  }
+]
