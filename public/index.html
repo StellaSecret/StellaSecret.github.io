@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StellaSecret — small tools, built around real problems</title>
+<meta name="description" content="TripMind, AsthmeTrack, GameTracker, SmartShoppingCalculator and PeopleModeler — small, focused apps built by StellaSecret to solve problems found in everyday life.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;700&family=Outfit:wght@400;600;800&display=swap');
+
+:root{
+  --bg0:#070D1A;--bg1:#0E1726;--bg2:#162035;--bg3:#1E2D47;
+  --blue:#3B82F6;--blue-dim:#1D4ED8;--cyan:#06B6D4;
+  --em:#10B981;
+  --amber:#F59E0B;--amber-dim:#B45309;
+  --org:#F97316;--org-dim:#C2410C;
+  --indigo:#6366F1;--indigo-dim:#4F46E5;
+  --t1:#F0F4FF;--t2:#94A3B8;--t3:#64748B;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(59,130,246,0.25);
+  --glow:rgba(59,130,246,0.16);
+  --card-shadow:0 24px 60px rgba(0,0,0,0.45);
+  --btn-shadow-blue:0 6px 22px rgba(59,130,246,.35);
+  --btn-shadow-em:0 6px 22px rgba(16,185,129,.35);
+  --btn-shadow-amber:0 6px 22px rgba(245,158,11,.35);
+  --btn-shadow-org:0 6px 22px rgba(249,115,22,.35);
+  --btn-shadow-indigo:0 6px 22px rgba(99,102,241,.35);
+  --logo-grad:linear-gradient(135deg,#F0F4FF,#06B6D4);
+  --fn:'Lexend',sans-serif;--fd:'Outfit',sans-serif;--fm:'JetBrains Mono',monospace;
+}
+
+[data-theme="light"]{
+  --bg0:#F0F4FF;--bg1:#FFFFFF;--bg2:#E8EEF8;--bg3:#D6E0F0;
+  --blue:#2563EB;--blue-dim:#1D4ED8;--cyan:#0891B2;
+  --em:#059669;
+  --amber:#D97706;--amber-dim:#92400E;
+  --org:#EA580C;--org-dim:#9A3412;
+  --indigo:#6366F1;--indigo-dim:#4F46E5;
+  --t1:#0F172A;--t2:#334155;--t3:#64748B;
+  --bd:rgba(0,0,0,0.10);--bd2:rgba(37,99,235,0.30);
+  --glow:rgba(37,99,235,0.10);
+  --card-shadow:0 8px 32px rgba(0,0,0,.10);
+  --btn-shadow-blue:0 6px 22px rgba(37,99,235,.25);
+  --btn-shadow-em:0 6px 22px rgba(5,150,105,.25);
+  --btn-shadow-amber:0 6px 22px rgba(217,119,6,.25);
+  --btn-shadow-org:0 6px 22px rgba(234,88,12,.25);
+  --btn-shadow-indigo:0 6px 22px rgba(99,102,241,.25);
+  --logo-grad:linear-gradient(135deg,#0F172A,#0891B2);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, var(--glow) 0%, transparent 70%),
+    var(--bg0);
+  color:var(--t1);
+  font-family:var(--fn);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background-color .25s ease, color .25s ease;
+}
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 24px; }
+
+/* ---------- Header ---------- */
+header{ padding:40px 0 0; display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.logo-row{ display:flex; align-items:baseline; gap:12px; }
+.logo-nm{
+  font-family:var(--fd); font-size:1.7rem; font-weight:800;
+  background:var(--logo-grad);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.logo-sub{
+  font-size:.62rem; color:var(--t3); font-family:var(--fm);
+  letter-spacing:2px; text-transform:uppercase;
+}
+
+.controls{ display:flex; align-items:center; gap:8px; }
+
+.ctrl-btn{
+  display:flex; align-items:center; justify-content:center;
+  gap:6px;
+  font-family:var(--fm); font-size:.68rem; font-weight:500;
+  letter-spacing:1px;
+  color:var(--t2);
+  background:var(--bg2);
+  border:1px solid var(--bd);
+  border-radius:10px;
+  padding:8px 11px;
+  cursor:pointer;
+  transition:border-color .15s ease, color .15s ease, transform .15s ease;
+}
+.ctrl-btn:hover{ border-color:var(--bd2); color:var(--t1); }
+.ctrl-btn:active{ transform:translateY(1px); }
+.ctrl-btn:focus-visible{ outline:2px solid var(--t1); outline-offset:2px; }
+.ctrl-btn svg{ width:14px; height:14px; flex-shrink:0; }
+.ctrl-btn .moon{ display:none; }
+[data-theme="light"] .ctrl-btn .sun{ display:none; }
+[data-theme="light"] .ctrl-btn .moon{ display:block; }
+
+/* ---------- Hero ---------- */
+.hero{ padding:32px 0 8px; }
+h1{
+  font-family:var(--fd); font-weight:800;
+  font-size:clamp(30px, 5vw, 46px);
+  line-height:1.15;
+  margin:0 0 18px;
+  max-width:16ch;
+  color:var(--t1);
+}
+.hero p{
+  font-size:clamp(15px, 1.8vw, 17px);
+  line-height:1.65;
+  color:var(--t2);
+  max-width:54ch;
+  margin:0;
+  font-weight:300;
+}
+
+/* ---------- Signature trace ---------- */
+.signature{ margin:52px 0 36px; }
+.signature svg{ display:block; width:100%; height:auto; }
+.signature path.trace{
+  fill:none;
+  stroke:url(#traceGradient);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-dasharray:1400;
+  stroke-dashoffset:1400;
+  filter:drop-shadow(0 0 6px rgba(59,130,246,0.45));
+  animation:draw 1.6s ease-out .2s forwards;
+}
+.signature circle{
+  fill:var(--cyan);
+  filter:drop-shadow(0 0 8px rgba(6,182,212,.8));
+  opacity:0;
+  animation:appear .4s ease-out 1.7s forwards;
+}
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@keyframes appear{ to{ opacity:1; } }
+@media (prefers-reduced-motion: reduce){
+  .signature path.trace{ stroke-dashoffset:0; animation:none; }
+  .signature circle{ opacity:1; animation:none; }
+}
+
+/* ---------- Section headers ---------- */
+.section-block{ padding-bottom:56px; }
+.section-head{
+  display:flex; align-items:center; gap:14px;
+  margin-bottom:20px;
+}
+.section-head h2{
+  font-family:var(--fm); font-size:.7rem; font-weight:500;
+  letter-spacing:3px; text-transform:uppercase;
+  color:var(--t3);
+  margin:0;
+  white-space:nowrap;
+}
+.section-head .rule{ height:1px; flex:1; background:var(--bd); }
+
+/* ---------- Project cards ---------- */
+.projects{
+  display:grid; grid-template-columns:1fr 1fr; gap:20px;
+}
+.projects.soon{ grid-template-columns:repeat(3, 1fr); }
+@media (max-width:880px){ .projects.soon{ grid-template-columns:1fr 1fr; } }
+@media (max-width:720px){ .projects{ grid-template-columns:1fr; } .projects.soon{ grid-template-columns:1fr; } }
+
+.card{
+  background:var(--bg1);
+  border:1px solid var(--bd);
+  border-radius:22px;
+  padding:28px 26px 26px;
+  box-shadow:var(--card-shadow);
+  display:flex; flex-direction:column;
+  transition:background-color .25s ease, box-shadow .25s ease;
+}
+.card.tripmind{ border-top:2px solid var(--blue); }
+.card.asthmetrack{ border-top:2px solid var(--em); }
+.card.shopping{ border-top:2px solid var(--amber); }
+.card.gametracker{ border-top:2px solid var(--org); }
+.card.peoplemodeler{ border-top:2px solid var(--indigo); }
+
+.eyebrow{
+  font-family:var(--fm); font-size:.6rem;
+  letter-spacing:2px; text-transform:uppercase;
+  margin-bottom:10px;
+}
+.card.tripmind .eyebrow{ color:var(--cyan); }
+.card.asthmetrack .eyebrow{ color:var(--em); }
+.card.shopping .eyebrow{ color:var(--amber); }
+.card.gametracker .eyebrow{ color:var(--org); }
+.card.peoplemodeler .eyebrow{ color:var(--indigo); }
+
+.card h2.title{
+  font-family:var(--fd); font-weight:800; font-size:1.5rem;
+  margin:0 0 12px; color:var(--t1);
+}
+
+.card .desc{
+  font-size:.9rem; line-height:1.6; color:var(--t2);
+  margin:0 0 20px; flex-grow:1; font-weight:300;
+}
+
+.tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px; }
+.tag{
+  font-family:var(--fm); font-size:.6rem;
+  padding:3px 9px; border-radius:10px;
+}
+.card.tripmind .tag{ background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.2); color:var(--cyan); }
+.card.asthmetrack .tag{ background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.2); color:var(--em); }
+.card.shopping .tag{ background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.2); color:var(--amber); }
+.card.gametracker .tag{ background:rgba(249,115,22,.1); border:1px solid rgba(249,115,22,.2); color:var(--org); }
+.card.peoplemodeler .tag{ background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.2); color:var(--indigo); }
+
+.links{ display:flex; flex-wrap:wrap; gap:10px; }
+.links a{
+  font-family:var(--fn);
+  font-size:.78rem; font-weight:600;
+  text-decoration:none;
+  padding:9px 14px;
+  border-radius:10px;
+  color:var(--t1);
+  background:var(--bg2);
+  border:1px solid var(--bd);
+  transition:transform .15s ease, box-shadow .2s ease, border-color .15s ease;
+}
+.links a.primary{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dim));
+  border:none; color:#fff;
+  box-shadow:var(--btn-shadow-blue);
+}
+.card.asthmetrack .links a.primary{ background:linear-gradient(135deg,var(--em),#047857); box-shadow:var(--btn-shadow-em); }
+.card.shopping .links a.primary{ background:linear-gradient(135deg,var(--amber),var(--amber-dim)); box-shadow:var(--btn-shadow-amber); }
+.card.gametracker .links a.primary{ background:linear-gradient(135deg,var(--org),var(--org-dim)); box-shadow:var(--btn-shadow-org); }
+.card.peoplemodeler .links a.primary{ background:linear-gradient(135deg,var(--indigo),var(--indigo-dim)); box-shadow:var(--btn-shadow-indigo); }
+
+.links a:hover{ transform:translateY(-1px); }
+.card.tripmind .links a:not(.primary):hover{ border-color:var(--blue); }
+.card.asthmetrack .links a:not(.primary):hover{ border-color:var(--em); }
+.card.shopping .links a:not(.primary):hover{ border-color:var(--amber); }
+.card.gametracker .links a:not(.primary):hover{ border-color:var(--org); }
+.card.peoplemodeler .links a:not(.primary):hover{ border-color:var(--indigo); }
+.links a:focus-visible{ outline:2px solid var(--t1); outline-offset:2px; }
+
+/* ---------- Coming soon badge ---------- */
+.badge-soon{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--fm); font-size:.62rem; font-weight:500;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:8px 13px;
+  border-radius:10px;
+  border:1px dashed var(--bd2);
+  color:var(--t3);
+  background:transparent;
+  width:fit-content;
+}
+.badge-soon .dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--t3);
+}
+.card.shopping .badge-soon{ border-color:rgba(245,158,11,.4); color:var(--amber); }
+.card.shopping .badge-soon .dot{ background:var(--amber); }
+.card.gametracker .badge-soon{ border-color:rgba(249,115,22,.4); color:var(--org); }
+.card.gametracker .badge-soon .dot{ background:var(--org); }
+.card.peoplemodeler .badge-soon{ border-color:rgba(99,102,241,.4); color:var(--indigo); }
+.card.peoplemodeler .badge-soon .dot{ background:var(--indigo); }
+.card .badge-soon{ margin-bottom:14px; }
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:1px solid var(--bd);
+  padding:22px 0 48px;
+  font-size:.75rem; font-family:var(--fm);
+  color:var(--t3);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+footer a{ color:var(--t3); text-decoration:underline; }
+footer a:hover{ color:var(--t1); }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div>
+    <div class="logo-row">
+      <span class="logo-nm">StellaSecret</span>
+    </div>
+    <div class="logo-sub" style="margin-top:4px;" data-i18n="tagline">SOFTWARE / SIDE PROJECTS</div>
+  </div>
+  <div class="controls">
+    <button class="ctrl-btn" id="themeToggle" type="button" aria-label="Toggle dark or light theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span id="themeLabel" data-i18n="themeLabelDark">DARK</span>
+    </button>
+    <button class="ctrl-btn" id="langToggle" type="button" aria-label="Switch language to French">
+      <span id="langLabel">EN</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1 data-i18n="heroTitle">Small tools, built around real problems.</h1>
+  <p data-i18n="heroBody">We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Five of those tools, below.</p>
+</section>
+
+<div class="signature wrap" role="presentation" aria-hidden="true">
+  <svg viewBox="0 0 1200 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="traceGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#10B981"/>
+        <stop offset="0.55" stop-color="#3B82F6"/>
+        <stop offset="1" stop-color="#06B6D4"/>
+      </linearGradient>
+    </defs>
+    <path class="trace" d="M0,55 L35,28 L65,82 L95,22 L125,72 L155,30 L185,78 L215,38 L245,68 L275,42
+      C320,52 360,18 405,50
+      C455,86 510,18 565,58
+      S660,98 730,52
+      S870,12 945,52
+      S1080,90 1160,52" />
+    <circle cx="1160" cy="52" r="5.5"/>
+  </svg>
+</div>
+
+<section class="section-block wrap">
+  <div class="section-head">
+    <h2 data-i18n="sectionReleased">Released</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="projects">
+
+    <article class="card tripmind">
+      <div class="eyebrow" data-i18n="travelEyebrow">Travel</div>
+      <h2 class="title">TripMind</h2>
+      <p class="desc" data-i18n="tripmindDesc">One place for weather, air quality, pollen, road routes and public transit — instead of five separate websites before every trip. Runs entirely on free, public APIs, with no server in between.</p>
+      <div class="tags">
+        <span class="tag">Open-Meteo</span>
+        <span class="tag">OSRM</span>
+        <span class="tag">Transitous</span>
+        <span class="tag">Android · Web</span>
+      </div>
+      <div class="links">
+        <a class="primary" href="https://play.google.com/store/apps/details?id=com.stellasecret.tripmind" target="_blank" rel="noopener" data-i18n="linkPlayStore">Play Store</a>
+        <a href="https://stellasecret.github.io/TripMind/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/TripMind" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+    <article class="card asthmetrack">
+      <div class="eyebrow" data-i18n="healthEyebrow">Health</div>
+      <h2 class="title">AsthmeTrack</h2>
+      <p class="desc" data-i18n="asthmetrackDesc">Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.</p>
+      <div class="tags">
+        <span class="tag">Capacitor</span>
+        <span class="tag">Drive sync</span>
+        <span class="tag">PDF export</span>
+        <span class="tag">Android</span>
+      </div>
+      <div class="links">
+        <a class="primary" href="https://play.google.com/store/apps/details?id=com.stellasecret.asthmetrack" target="_blank" rel="noopener" data-i18n="linkPlayStore">Play Store</a>
+        <a href="https://stellasecret.github.io/AsthmeTrack/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/AsthmeTrack" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section-block wrap">
+  <div class="section-head">
+    <h2 data-i18n="sectionComingSoon">Coming soon</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="projects soon">
+
+    <article class="card shopping">
+      <div class="eyebrow" data-i18n="shoppingEyebrow">Shopping</div>
+      <h2 class="title">SmartShoppingCalculator</h2>
+      <p class="desc" data-i18n="shoppingDesc">Compares everyday products by their real unit cost — toilet paper by price per gram of paper, protein powder by price per gram of protein. No ads, no account, works fully offline.</p>
+      <div class="tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">Offline</span>
+        <span class="tag">Android · Web</span>
+      </div>
+      <div class="badge-soon"><span class="dot"></span><span data-i18n="badgeComingSoon">Coming soon to Play Store</span></div>
+      <div class="links">
+        <a href="https://stellasecret.github.io/SmartShoppingCalculator/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/stellasecret.github.io/SmartShoppingCalculator" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+    <article class="card gametracker">
+      <div class="eyebrow" data-i18n="gamesEyebrow">Games</div>
+      <h2 class="title">GameTracker</h2>
+      <p class="desc" data-i18n="gametrackerDesc">Score tracking for board games, with three game modes, player stats, and optional Google Drive backup. A premium tier adds real-time shared groups.</p>
+      <div class="tags">
+        <span class="tag">Flutter</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">Android · Web</span>
+      </div>
+      <div class="badge-soon"><span class="dot"></span><span data-i18n="badgeComingSoon">Coming soon to Play Store</span></div>
+      <div class="links">
+        <a href="https://stellasecret.github.io/GameTracker/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/GameTracker" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+    <article class="card peoplemodeler">
+      <div class="eyebrow" data-i18n="reflectionEyebrow">Reflection</div>
+      <h2 class="title">PeopleModeler</h2>
+      <p class="desc" data-i18n="peoplemodelerDesc">A private journal for understanding the people in your life a little better — their motivations, patterns, and what tends to set them off — to build empathy, not to act behind their back.</p>
+      <div class="tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">Room DB</span>
+        <span class="tag">Local-only</span>
+      </div>
+      <div class="badge-soon"><span class="dot"></span><span data-i18n="badgeInDevelopment">In development</span></div>
+      <div class="links">
+        <a href="https://stellasecret.github.io/PeopleModeler/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/PeopleModeler" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer class="wrap">
+  <span data-i18n="footerCopy">© 2026 StellaSecret</span>
+  <span><a href="https://github.com/StellaSecret" target="_blank" rel="noopener">GitHub</a></span>
+</footer>
+
+<script>
+(function(){
+  var i18n = {
+    en: {
+      tagline: "SOFTWARE / SIDE PROJECTS",
+      heroTitle: "Small tools, built around real problems.",
+      heroBody: "We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Five of those tools, below.",
+      sectionReleased: "Released",
+      sectionComingSoon: "Coming soon",
+      travelEyebrow: "Travel",
+      healthEyebrow: "Health",
+      shoppingEyebrow: "Shopping",
+      gamesEyebrow: "Games",
+      reflectionEyebrow: "Reflection",
+      tripmindDesc: "One place for weather, air quality, pollen, road routes and public transit — instead of five separate websites before every trip. Runs entirely on free, public APIs, with no server in between.",
+      asthmetrackDesc: "Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.",
+      shoppingDesc: "Compares everyday products by their real unit cost — toilet paper by price per gram of paper, protein powder by price per gram of protein. No ads, no account, works fully offline.",
+      gametrackerDesc: "Score tracking for board games, with three game modes, player stats, and optional Google Drive backup. A premium tier adds real-time shared groups.",
+      peoplemodelerDesc: "A private journal for understanding the people in your life a little better — their motivations, patterns, and what tends to set them off — to build empathy, not to act behind their back.",
+      badgeComingSoon: "Coming soon to Play Store",
+      badgeInDevelopment: "In development",
+      linkPlayStore: "Play Store",
+      linkWebsite: "Website",
+      linkSource: "Source",
+      linkApk: "APK",
+      footerCopy: "© 2026 StellaSecret",
+      themeLabelDark: "DARK",
+      themeLabelLight: "LIGHT",
+      themeAriaToDark: "Switch to dark theme",
+      themeAriaToLight: "Switch to light theme",
+      langAria: "Switch language to French"
+    },
+    fr: {
+      tagline: "LOGICIELS / PROJETS PERSONNELS",
+      heroTitle: "De petits outils, pensés pour de vrais problèmes.",
+      heroBody: "Nous écrivons des logiciels quand nous tombons sur une friction sans bonne solution — trop d'onglets ouverts pour préparer un trajet, aucun bon moyen de suivre l'asthme d'un proche sans payer. Cinq de ces outils, ci-dessous.",
+      sectionReleased: "Disponibles",
+      sectionComingSoon: "À venir",
+      travelEyebrow: "Voyage",
+      healthEyebrow: "Santé",
+      shoppingEyebrow: "Courses",
+      gamesEyebrow: "Jeux",
+      reflectionEyebrow: "Réflexion",
+      tripmindDesc: "Météo, qualité de l'air, pollens, itinéraires routiers et transports en commun, réunis au même endroit, plutôt que cinq sites différents avant chaque trajet. Fonctionne uniquement avec des APIs publiques et gratuites, sans serveur intermédiaire.",
+      asthmetrackDesc: "Débit de pointe, SpO₂ et prises d'Easyhaler, suivis assez précisément pour apporter de vrais chiffres en consultation plutôt qu'une estimation. Gratuit, sans publicité, et vos données restent sur votre appareil par défaut.",
+      shoppingDesc: "Compare le coût réel des produits du quotidien — le papier toilette au prix par gramme de papier, les protéines en poudre au prix par gramme de protéine. Sans publicité, sans compte, fonctionne entièrement hors ligne.",
+      gametrackerDesc: "Suivi des scores pour les jeux de société, avec trois modes de jeu, des statistiques par joueur, et une sauvegarde optionnelle sur Google Drive. Une offre premium ajoute des groupes synchronisés en temps réel.",
+      peoplemodelerDesc: "Un journal privé pour mieux comprendre les personnes de votre entourage — leurs motivations, leurs habitudes, ce qui les fait réagir — pour développer son empathie, pas pour agir dans leur dos.",
+      badgeComingSoon: "Bientôt sur le Play Store",
+      badgeInDevelopment: "En développement",
+      linkPlayStore: "Play Store",
+      linkWebsite: "Site web",
+      linkSource: "Code source",
+      linkApk: "APK",
+      footerCopy: "© 2026 StellaSecret",
+      themeLabelDark: "SOMBRE",
+      themeLabelLight: "CLAIR",
+      themeAriaToDark: "Passer au thème sombre",
+      themeAriaToLight: "Passer au thème clair",
+      langAria: "Passer en anglais"
+    }
+  };
+
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  var themeLabel = document.getElementById('themeLabel');
+  var langBtn = document.getElementById('langToggle');
+  var langLabel = document.getElementById('langLabel');
+
+  /* ---------- Theme ---------- */
+  function applyTheme(theme){
+    if(theme === 'light'){ root.setAttribute('data-theme','light'); }
+    else{ root.removeAttribute('data-theme'); }
+    var lang = root.getAttribute('lang') === 'fr' ? 'fr' : 'en';
+    themeLabel.textContent = theme === 'light' ? i18n[lang].themeLabelLight : i18n[lang].themeLabelDark;
+    themeBtn.setAttribute('aria-label', theme === 'light' ? i18n[lang].themeAriaToDark : i18n[lang].themeAriaToLight);
+  }
+
+  function initTheme(){
+    var saved = localStorage.getItem('theme');
+    if(saved){ return saved; }
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    return prefersLight ? 'light' : 'dark';
+  }
+
+  var currentTheme = initTheme();
+  applyTheme(currentTheme);
+
+  themeBtn.addEventListener('click', function(){
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+    applyTheme(currentTheme);
+  });
+
+  /* ---------- Language ---------- */
+  function applyLang(lang){
+    root.setAttribute('lang', lang);
+    var dict = i18n[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key]){ el.textContent = dict[key]; }
+    });
+    langLabel.textContent = lang === 'fr' ? 'FR' : 'EN';
+    langBtn.setAttribute('aria-label', dict.langAria);
+    applyTheme(currentTheme);
+  }
+
+  function initLang(){
+    var saved = localStorage.getItem('lang');
+    if(saved){ return saved; }
+    return (navigator.language || '').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+
+  var currentLang = initLang();
+  applyLang(currentLang);
+
+  langBtn.addEventListener('click', function(){
+    currentLang = currentLang === 'fr' ? 'en' : 'fr';
+    localStorage.setItem('lang', currentLang);
+    applyLang(currentLang);
+  });
+})();
+</script>
+
+</body>
+</html>
