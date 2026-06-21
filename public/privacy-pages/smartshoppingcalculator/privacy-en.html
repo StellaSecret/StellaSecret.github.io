@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0d0f14; --surface: #161920; --border: #2a2f3d;
+  --text: #e8eaf0; --muted: #9ca3af;
+  --accent: #6C63FF; --green: #43D9AD;
+}
+</style>
+<title>Privacy Policy — Smart Shopping Calculator</title>
+</head>
+<body>
+<div class="container">
+
+  <div class="lang-switcher">
+    <a href="privacy.html" class="lang-link">FR</a>
+  </div>
+
+  <a href="../" class="back">← All policies</a>
+
+  <header>
+    <div class="app-name">Smart Shopping Calculator</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: June 2026</div>
+  </header>
+
+  <div class="highlight">
+    <p>
+      <strong>Summary:</strong> Smart Shopping Calculator does not collect any personal data.
+      All your calculations and comparisons are performed locally on your device.
+      The app communicates with no external server, except for the optional Open Food Facts
+      lookup triggered when you scan a barcode.
+    </p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>
+    Smart Shopping Calculator is an Android app for comparing unit prices
+    (toilet paper, protein powder), developed privately by StellaSecret.
+    It is not operated by a commercial entity.
+    App identifier: <code>com.stellasecret.smartshoppingcalculator</code>.
+  </p>
+
+  <h2>2. Data Collection</h2>
+  <p>
+    Smart Shopping Calculator does not collect, store, or transmit <strong>any personal data</strong>
+    to our servers. We have no servers of our own.
+  </p>
+  <p>
+    <span class="badge badge-red">✕</span> No identification data (name, email, phone)<br/>
+    <span class="badge badge-red">✕</span> No location data<br/>
+    <span class="badge badge-red">✕</span> No navigation or usage data<br/>
+    <span class="badge badge-red">✕</span> No advertising identifier<br/>
+    <span class="badge badge-red">✕</span> No biometric or health data
+  </p>
+  <p>
+    The only data created by the app is the prices and product details you enter yourself.
+    This data is stored locally in your browser (via <code>localStorage</code>) if you use
+    the session save feature. It never leaves your device.
+  </p>
+
+  <h2>3. Barcode Scanning — Open Food Facts (optional)</h2>
+  <p>
+    Smart Shopping Calculator offers a barcode scanning feature to auto-fill fields for
+    a protein powder product. This feature is <strong>entirely optional</strong> and is
+    only triggered by your explicit action.
+  </p>
+  <ul>
+    <li>Barcode recognition is performed <strong>entirely on your device</strong> using ML Kit (Google) — no image is sent to any external server.</li>
+    <li>Once a barcode is detected, the app queries the public
+      <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>
+      API to retrieve the product's nutritional information (name, weight, protein content).</li>
+    <li>Only the raw barcode number (e.g. <code>3270160513847</code>) is sent to Open Food Facts — no identifying data about you is transmitted.</li>
+    <li>Open Food Facts is a non-profit project. See their
+      <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>
+      for their own data practices.</li>
+    <li>If the product is not found or there is no network, no data is transmitted and you can enter product details manually.</li>
+  </ul>
+  <p>
+    <span class="badge badge-blue">ℹ</span> This feature is available in the Android app only, not in the web version.
+  </p>
+
+  <h2>4. Camera</h2>
+  <p>
+    The app requests camera access only when you trigger a barcode scan. The camera permission
+    is used solely to capture a photo of the product to scan. No image is retained, transmitted,
+    or analysed beyond reading the barcode.
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Camera permission is never requested at launch.<br/>
+    <span class="badge badge-green">✓</span> No image is stored or sent to any server.<br/>
+    <span class="badge badge-green">✓</span> You can deny the permission — the app remains fully functional via manual entry.
+  </p>
+
+  <h2>5. Local Storage</h2>
+  <p>
+    If you use the "Save session" feature, your comparison data (prices, product details)
+    is saved in your browser's local storage via <code>localStorage</code>.
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> This data stays on your device and is never transmitted.<br/>
+    <span class="badge badge-green">✓</span> You can delete it at any time using the "Clear session" button in the app.<br/>
+    <span class="badge badge-green">✓</span> Uninstalling the app deletes all local data.
+  </p>
+
+  <h2>6. Advertising and Analytics</h2>
+  <p>
+    Smart Shopping Calculator contains no advertising and integrates no analytics or tracking
+    tools (no Firebase Analytics, no Crashlytics, no advertising SDK, no third-party cookies).
+  </p>
+
+  <h2>7. Android Permissions Used</h2>
+  <ul>
+    <li><strong>CAMERA</strong> — used only during a barcode scan, on your explicit action.</li>
+    <li><strong>INTERNET</strong> — used only to query Open Food Facts during a barcode scan, on your explicit action.</li>
+  </ul>
+  <p>The app requests no other permissions (no access to contacts, location, external storage,
+  microphone, etc.).</p>
+
+  <h2>8. Your Rights (GDPR)</h2>
+  <p>
+    Since Smart Shopping Calculator processes no personal data on its own servers, your rights
+    of access, rectification, and deletion are naturally upheld: your data is on your device,
+    under your full control.
+  </p>
+  <p>
+    For any privacy-related question, you can reach us at the address listed in section 10.
+  </p>
+
+  <h2>9. Children</h2>
+  <p>
+    Smart Shopping Calculator is not specifically directed at children under 13 and does not
+    knowingly collect any information from them.
+  </p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>
+    If this policy is updated, the date at the top of this page will be changed accordingly.
+    Significant changes will be noted in the app's release notes on the Google Play Store.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    For any questions regarding this privacy policy:
+    <a href="mailto:thaikhuevincent.nguyen@gmail.com">thaikhuevincent.nguyen@gmail.com</a>
+  </p>
+
+  <footer>
+    Smart Shopping Calculator · Privacy Policy · June 2026
+  </footer>
+
+</div>
+</body>
+</html>

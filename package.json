@@ -1,0 +1,14 @@
+{
+  "name": "stellasecret-github-io",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "serve": "npx serve . -p 8080"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "serve": "^14.2.3",
+    "wait-on": "^7.2.0"
+  }
+}

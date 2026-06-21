@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0a0f1e; --surface: #111827; --border: #1e3a5f;
+  --text: #f1f5f9; --muted: #94a3b8;
+  --accent: #3b82f6; --green: #10b981;
+}
+</style>
+<title>Politique de confidentialité — CVGenerator</title>
+</head>
+<body>
+<div class="container">
+
+  <div class="lang-switcher">
+    <a href="privacy-en.html" class="lang-link">EN</a>
+  </div>
+
+  <a href="../" class="back">← Toutes les politiques</a>
+
+  <header>
+    <div class="app-name">CVGenerator</div>
+    <h1>Politique de confidentialité</h1>
+    <div class="updated">Dernière mise à jour : mai 2026</div>
+  </header>
+
+  <div class="highlight">
+    <p>
+      <strong>En résumé :</strong> CVGenerator traite votre profil et votre fiche de
+      poste <strong>uniquement pour générer votre CV</strong>, via l'API Anthropic ou
+      Google Vertex AI. Ces données ne sont <strong>jamais stockées sur nos serveurs</strong>.
+      Seule votre clé API est conservée localement sur votre appareil.
+    </p>
+  </div>
+
+  <h2>1. Qui sommes-nous ?</h2>
+  <p>
+    CVGenerator est une application mobile Android de génération de CV assistée par
+    intelligence artificielle, développée à titre personnel. Elle n'est pas exploitée
+    par une société commerciale.
+    Identifiant de l'application : <code>com.stellasecret.cvgenerator</code>.
+  </p>
+
+  <h2>2. Données traitées et finalité</h2>
+  <p>
+    CVGenerator traite uniquement les données que vous fournissez volontairement pour
+    générer votre CV :
+  </p>
+  <ul>
+    <li><strong>Votre profil :</strong> texte importé depuis un fichier (PDF, DOCX, TXT…)
+    ou saisi manuellement. Ce contenu peut inclure votre nom, vos expériences
+    professionnelles, vos compétences et votre formation.</li>
+    <li><strong>La fiche de poste :</strong> texte importé ou collé, décrivant
+    l'offre d'emploi ciblée. Ces données sont facultatives.</li>
+  </ul>
+  <p>
+    Ces données sont transmises <strong>une seule fois, à la demande explicite de
+    l'utilisateur</strong> (appui sur « Générer mon CV »), à l'API d'IA choisie,
+    puis immédiatement écartées. Elles ne sont jamais enregistrées sur un serveur
+    exploité par CVGenerator.
+  </p>
+
+  <h2>3. Services d'IA tiers utilisés</h2>
+  <p>
+    Selon le mode choisi, CVGenerator transmet vos données à l'un des services suivants :
+  </p>
+  <ul>
+    <li>
+      <strong>API Anthropic (Claude) :</strong> utilisée lorsque vous saisissez votre
+      propre clé API ou pour les comptes non-premium. La transmission est soumise à la
+      <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité
+      d'Anthropic</a>. Anthropic indique ne pas utiliser les données des requêtes API
+      pour entraîner ses modèles.
+    </li>
+    <li>
+      <strong>Google Vertex AI :</strong> utilisé uniquement pour les comptes premium
+      connectés via Google. La transmission est soumise à la
+      <a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">politique
+      de confidentialité de Google Cloud</a>.
+    </li>
+  </ul>
+  <p>
+    <span class="badge badge-blue">⚠</span> La gestion des données transmises à ces
+    services est régie par leurs propres politiques, indépendamment de CVGenerator.
+    Nous vous recommandons de ne pas inclure d'informations sensibles
+    (numéro de sécurité sociale, données bancaires, données de santé) dans votre profil.
+  </p>
+
+  <h2>4. Données stockées localement sur votre appareil</h2>
+  <p>
+    CVGenerator stocke les données suivantes <strong>uniquement sur votre appareil</strong>,
+    via Android DataStore (stockage chiffré par Android) :
+  </p>
+  <ul>
+    <li><strong>Votre clé API Anthropic</strong> (si vous en saisissez une) — stockée
+    localement, jamais transmise à nos serveurs.</li>
+  </ul>
+  <p>
+    <span class="badge badge-green">✓</span> Aucun historique de CV généré n'est conservé.<br>
+    <span class="badge badge-green">✓</span> Votre profil et votre fiche de poste ne sont
+    jamais sauvegardés entre les sessions.<br>
+    <span class="badge badge-green">✓</span> La désinstallation efface l'intégralité
+    des données locales.
+  </p>
+
+  <h2>5. Authentification Google (optionnelle)</h2>
+  <p>
+    CVGenerator propose une connexion via votre compte Google (OAuth 2.0 via Firebase
+    Authentication). Cette fonctionnalité est entièrement optionnelle.
+  </p>
+  <p>
+    Lorsque vous vous connectez :
+  </p>
+  <ul>
+    <li>Votre adresse e-mail Google est utilisée pour identifier votre session et
+    vérifier si votre compte bénéficie d'un accès premium (Vertex AI).</li>
+    <li>Aucun accès à vos emails, contacts ou autres données Google n'est demandé.</li>
+    <li>Vous pouvez vous déconnecter à tout moment depuis l'application.</li>
+    <li>Vous pouvez révoquer l'accès depuis
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">
+    Google Account → Applications tierces</a>.</li>
+  </ul>
+  <p>
+    La gestion de l'authentification est soumise à la
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de
+    confidentialité de Google</a>.
+  </p>
+
+  <h2>6. Données non collectées</h2>
+  <p>
+    CVGenerator ne collecte, ne stocke et ne transmet <strong>aucune</strong> des données
+    suivantes à nos serveurs :
+  </p>
+  <p>
+    <span class="badge badge-red">✕</span> Données de localisation<br>
+    <span class="badge badge-red">✕</span> Identifiants publicitaires<br>
+    <span class="badge badge-red">✕</span> Données de navigation ou d'usage<br>
+    <span class="badge badge-red">✕</span> Données biométriques ou de santé<br>
+    <span class="badge badge-red">✕</span> Contacts ou données d'autres applications<br>
+    <span class="badge badge-red">✕</span> CV générés ou historique des générations
+  </p>
+
+  <h2>7. Publicité et analytics</h2>
+  <p>
+    CVGenerator ne contient <strong>aucune publicité</strong> et n'intègre aucun outil
+    d'analyse ou de suivi comportemental (pas de Firebase Analytics, pas de Crashlytics,
+    pas de SDK publicitaire, pas de pixel de tracking).
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Aucune publicité.<br>
+    <span class="badge badge-green">✓</span> Aucun SDK de tracking.<br>
+    <span class="badge badge-green">✓</span> Aucune donnée vendue à des tiers.
+  </p>
+
+  <h2>8. Permissions Android utilisées</h2>
+  <ul>
+    <li><strong>INTERNET</strong> — nécessaire pour appeler l'API d'IA
+    (Anthropic ou Vertex AI) et pour l'authentification Google.</li>
+    <li><strong>READ_EXTERNAL_STORAGE / READ_MEDIA_*</strong> — nécessaire pour
+    lire les fichiers (PDF, DOCX, TXT…) que vous choisissez d'importer depuis
+    votre appareil. L'accès n'est déclenché que lors de la sélection d'un fichier
+    par l'utilisateur.</li>
+  </ul>
+  <p>
+    CVGenerator ne demande <strong>aucune</strong> permission de localisation,
+    d'appareil photo, de contacts, de microphone ou d'accès aux SMS.
+  </p>
+
+  <h2>9. Sécurité</h2>
+  <p>
+    Les communications avec les API d'IA sont chiffrées via HTTPS/TLS.
+    Votre clé API est stockée dans Android DataStore, dont le contenu est protégé
+    par le système de chiffrement Android.
+  </p>
+  <p>
+    Nous vous recommandons de ne pas partager votre appareil déverrouillé avec des
+    tiers si vous avez enregistré votre clé API dans l'application.
+  </p>
+
+  <h2>10. Vos droits (RGPD)</h2>
+  <p>
+    CVGenerator ne traitant aucune donnée personnelle sur ses propres serveurs, les
+    droits d'accès, de rectification et de suppression s'exercent directement sur
+    votre appareil ou auprès des services tiers concernés.
+  </p>
+  <ul>
+    <li><strong>Suppression locale :</strong> désinstallez l'application ou supprimez
+    votre clé API depuis les paramètres.</li>
+    <li><strong>Données transmises aux API :</strong> contactez directement
+    <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic</a> ou
+    <a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank" rel="noopener noreferrer">Google Cloud</a>
+    pour exercer vos droits relatifs aux données transmises à leurs services.</li>
+    <li><strong>Authentification Google :</strong> révoquez l'accès depuis
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.</li>
+  </ul>
+
+  <h2>11. Enfants</h2>
+  <p>
+    CVGenerator est destiné aux personnes en recherche d'emploi et n'est pas conçu
+    pour les enfants de moins de 13 ans. Nous ne collectons sciemment aucune
+    information concernant des mineurs.
+  </p>
+
+  <h2>12. Modifications de cette politique</h2>
+  <p>
+    En cas de modification de cette politique, la date de mise à jour sera modifiée
+    en haut de cette page. Les changements significatifs seront signalés dans les
+    notes de mise à jour de l'application sur le Google Play Store.
+  </p>
+
+  <h2>13. Contact</h2>
+  <p>
+    Pour toute question concernant cette politique de confidentialité :
+    <a href="mailto:contact@stellasecret.com">contact@stellasecret.com</a>
+  </p>
+
+  <footer>
+    CVGenerator · Politique de confidentialité · Mai 2026
+  </footer>
+
+</div>
+</body>
+</html>

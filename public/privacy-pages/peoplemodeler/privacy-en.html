@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0d0f14; --surface: #161920; --border: #2a2f3d;
+  --text: #e8eaf0; --muted: #9ca3af;
+  --accent: #E94560; --green: #00D4AA;
+}
+</style>
+<title>Privacy Policy — People Modeler</title>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switcher">
+    <a href="privacy.html" class="lang-link">FR</a>
+  </div>
+  <a href="../" class="back">← All policies</a>
+  <header>
+    <div class="app-name">People Modeler</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: May 2026</div>
+  </header>
+  <div class="highlight">
+    <p><strong>Summary:</strong> People Modeler stores all your data <strong>locally on your device</strong>, with no server, no mandatory account, and no tracking. Google Drive synchronization is entirely optional and under your exclusive control.</p>
+  </div>
+  <h2>1. Who we are</h2>
+  <p>People Modeler is a behavioral modeling mobile application, developed privately. It is not operated by a commercial entity. App Identifier: <code>com.peoplemodeler</code>.</p>
+  <h2>2. Data Collection</h2>
+  <p>People Modeler does not collect, store, or transmit <strong>any personal data to our servers</strong> — we do not have any. The profile cards, motivations, biases, predictions, and notes you create remain on your device.</p>
+  <p>
+    <span class="badge badge-red">✕</span> No identification data (name, email, phone)<br>
+    <span class="badge badge-red">✕</span> No location data<br>
+    <span class="badge badge-red">✕</span> No navigation or usage data transmitted<br>
+    <span class="badge badge-red">✕</span> No advertising identifier<br>
+    <span class="badge badge-red">✕</span> No biometric or health data<br>
+    <span class="badge badge-red">✕</span> No remote server receives your profiles
+  </p>
+  <h2>3. Local Data Storage</h2>
+  <p>All your data — profile cards, motivations, cognitive biases, OCEAN profiles, predictions, and results — is stored in a local SQLite database on your device via Android Room. This data never leaves your phone unless you explicitly enable Google Drive synchronization (see section 4).</p>
+  <p>
+    <span class="badge badge-green">✓</span> Data stored only on your device.<br>
+    <span class="badge badge-green">✓</span> No remote database associated with the application.<br>
+    <span class="badge badge-green">✓</span> Uninstalling deletes all local data.
+  </p>
+  <h2>4. Google Drive Sync (optional)</h2>
+  <p>People Modeler offers an optional backup feature via your personal Google account. This feature is <strong>inactive by default</strong> and only activates if you explicitly connect with your Google account.</p>
+  <p>When you enable synchronization:</p>
+  <ul>
+    <li>Data is backed up in your personal Google Drive's <strong>private App Data folder</strong> — an area inaccessible to other applications and not visible in the standard Drive interface.</li>
+    <li>Only your Google account email address is used to identify the session. It is stored locally on your device only.</li>
+    <li>Synchronization uses the OAuth <code>drive.appdata</code> scope — the most restricted permission level.</li>
+    <li>You can sign out at any time from the app's Drive tab, which immediately deletes the local session.</li>
+    <li>You can delete your Drive data at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account → Third-party apps</a>.</li>
+  </ul>
+  <h2>5. Third-party Services</h2>
+  <p>Excluding optional Google Drive sync, People Modeler <strong>uses no third-party services</strong>: no external API, no CDN, no analytical SDK, no crash reporting.</p>
+  <h2>6. Advertising and Analytics</h2>
+  <p>People Modeler contains no advertising and integrates no analysis or tracking tools.</p>
+  <h2>7. Android Permissions</h2>
+  <ul>
+    <li><strong>INTERNET</strong> — required for optional Google Drive sync and loading the web version.</li>
+    <li><strong>Google Account (GET_ACCOUNTS)</strong> — used only if you enable Drive sync. No access to other accounts or emails.</li>
+  </ul>
+  <h2>8. Contact</h2>
+  <p>For any questions regarding this privacy policy: <a href="mailto:contact@peoplemodeler.app">contact@peoplemodeler.app</a></p>
+  <footer>People Modeler · Privacy Policy · May 2026</footer>
+</div>
+</body>
+</html>

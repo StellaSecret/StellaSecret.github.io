@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0d0f14; --surface: #161920; --border: #2a2f3d;
+  --text: #e8eaf0; --muted: #9ca3af;
+  --accent: #4f9cf9; --green: #10d9a0;
+}
+</style>
+<title>Politique de confidentialité — TripMind</title>
+</head>
+<body>
+<div class="container">
+
+  <div class="lang-switcher">
+    <a href="privacy-en.html" class="lang-link">EN</a>
+  </div>
+
+  <a href="../" class="back">← Toutes les politiques</a>
+
+
+  <header>
+    <div class="app-name">TripMind</div>
+    <h1>Politique de confidentialité</h1>
+    <div class="updated">Dernière mise à jour : mai 2026</div>
+  </header>
+
+  <div class="highlight">
+    <p>
+      <strong>En résumé :</strong> TripMind ne collecte aucune donnée personnelle.
+      L'application fonctionne entièrement avec des APIs publiques et gratuites,
+      <strong>aucun compte utilisateur, aucun token, aucun serveur, aucun tracking</strong>.
+    </p>
+  </div>
+
+  <h2>1. Qui sommes-nous ?</h2>
+  <p>
+    TripMind est une application mobile d'assistance aux déplacements en France,
+    développée à titre personnel par StellaSecret. Elle n'est pas exploitée par une société commerciale.
+    Identifiant de l'application : <code>com.stellasecret.tripmind</code>.
+  </p>
+
+  <h2>2. Données collectées</h2>
+  <p>
+    TripMind ne collecte, ne stocke et ne transmet <strong>aucune donnée personnelle</strong>.
+    Aucun compte utilisateur n'est requis. Aucune inscription n'est demandée.
+  </p>
+  <p>
+    <span class="badge badge-red">✕</span> Aucune donnée d'identification (nom, email, téléphone)<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée de localisation stockée ou transmise<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée de navigation ou d'usage<br/>
+    <span class="badge badge-red">✕</span> Aucun identifiant publicitaire<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée biométrique ou de santé
+  </p>
+  <p>
+    La géolocalisation de l'appareil, si vous l'autorisez, est utilisée
+    <strong>uniquement en temps réel</strong> pour calculer les informations météo,
+    la qualité de l'air et les itinéraires. Elle n'est jamais enregistrée ni transmise
+    à nos serveurs (nous n'en avons pas).
+  </p>
+
+  <h2>3. Services tiers utilisés</h2>
+  <p>
+    TripMind s'appuie exclusivement sur des APIs publiques et gratuites.
+    Vos requêtes transitent directement de votre appareil vers ces services — aucun
+    proxy ni serveur intermédiaire de notre part.
+  </p>
+  <ul>
+    <li><strong>Open-Meteo</strong> — météo et indice UV (<a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">conditions d'utilisation</a>)</li>
+    <li><strong>Open-Meteo / Copernicus CAMS</strong> — qualité de l'air et pollen</li>
+    <li><strong>Base Adresse Nationale (data.gouv.fr)</strong> — géocodage d'adresses françaises</li>
+    <li><strong>OSRM / OpenStreetMap</strong> — calcul d'itinéraires routiers</li>
+    <li><strong>Transitous / MOTIS 2</strong> — horaires de trains et transports publics (<a href="https://transitous.org" target="_blank" rel="noopener noreferrer">transitous.org</a>)</li>
+  </ul>
+  <p>
+    Ces services peuvent collecter votre adresse IP selon leurs propres politiques
+    de confidentialité, indépendamment de TripMind. Nous vous encourageons à consulter
+    leurs pages respectives.
+  </p>
+
+  <h2>4. Stockage des données</h2>
+  <p>
+    Les seules données conservées localement sur votre appareil sont les préférences
+    d'affichage (ex. thème clair/sombre, langue) et les recherches récentes (cache local).
+    Ces données ne quittent jamais votre téléphone.
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Aucun serveur distant ne reçoit vos données.<br/>
+    <span class="badge badge-green">✓</span> Aucune base de données distante n'est associée à l'application.<br/>
+    <span class="badge badge-green">✓</span> La désinstallation de l'application efface toutes les données locales.
+  </p>
+
+  <h2>5. Partage des données</h2>
+  <p>
+    <span class="badge badge-green">✓</span> Aucune donnée n'est partagée avec des tiers.<br/>
+    <span class="badge badge-green">✓</span> Aucune donnée n'est vendue.<br/>
+    <span class="badge badge-green">✓</span> Aucune donnée n'est utilisée à des fins publicitaires.
+  </p>
+
+  <h2>6. Publicité et analytics</h2>
+  <p>
+    TripMind ne contient aucune publicité et n'intègre aucun outil d'analyse
+    ou de tracking (pas de Firebase Analytics, pas de Crashlytics, pas de SDK tiers).
+  </p>
+
+  <h2>7. Permissions Android utilisées</h2>
+  <ul>
+    <li><strong>INTERNET</strong> — obligatoire pour interroger les APIs météo, qualité de l'air, géocodage et transports.</li>
+    <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</strong> — optionnel, utilisé uniquement si vous demandez à l'application de détecter votre position automatiquement. La position n'est jamais enregistrée.</li>
+  </ul>
+
+  <h2>8. Vos droits (RGPD)</h2>
+  <p>
+    TripMind ne traitant aucune donnée personnelle vous concernant, les droits d'accès,
+    de rectification et de suppression s'exercent naturellement : il n'y a rien à demander,
+    car rien n'est stocké en dehors de votre appareil.
+  </p>
+
+  <h2>9. Enfants</h2>
+  <p>
+    TripMind n'est pas destiné aux enfants de moins de 13 ans et ne collecte sciemment
+    aucune information les concernant.
+  </p>
+
+  <h2>10. Modifications de cette politique</h2>
+  <p>
+    En cas de modification de cette politique, la date de mise à jour sera modifiée
+    en haut de cette page. Les changements significatifs seront signalés dans les
+    notes de mise à jour de l'application sur le Google Play Store.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    Pour toute question concernant cette politique de confidentialité :
+    <a href="mailto:thaikhuevincent.nguyen@gmail.com">thaikhuevincent.nguyen@gmail.com</a>
+  </p>
+
+  <footer>
+    TripMind · Politique de confidentialité · Mai 2026
+  </footer>
+
+</div>
+</body>
+</html>

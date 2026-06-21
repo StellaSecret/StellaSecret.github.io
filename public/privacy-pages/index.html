@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stella Secret — Privacy Policies</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d0d0d;
+      color: #f5f0e8;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 0 1rem;
+    }
+    header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid #2c2c2c;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .brand {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #d4a853;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #f5f0e8;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle { color: #6b7b8d; font-size: 0.95rem; }
+
+    /* Lang Toggle */
+    .lang-switcher {
+      position: absolute;
+      top: 3rem;
+      right: 0;
+    }
+    .lang-btn {
+      background: #1a1a1a;
+      border: 1px solid #2c2c2c;
+      color: #d4a853;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover { border-color: #d4a853; background: #242424; }
+
+    main { max-width: 720px; margin: 0 auto; }
+    .apps { display: flex; flex-direction: column; gap: 12px; }
+    .app-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      border: 1px solid #2c2c2c;
+      border-radius: 10px;
+      padding: 1.2rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .app-link:hover {
+      border-color: #d4a853;
+      background: #1f1f1f;
+    }
+    .app-info { flex: 1; }
+    .app-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f5f0e8;
+      margin-bottom: 0.2rem;
+    }
+    .app-desc { font-size: 0.85rem; color: #6b7b8d; }
+    .app-arrow { color: #d4a853; font-size: 1.1rem; margin-left: 1rem; }
+
+    footer {
+      max-width: 720px;
+      margin: 3rem auto 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #2c2c2c;
+      font-size: 0.82rem;
+      color: #6b7b8d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a { color: #6b7b8d; text-decoration: none; }
+    footer a:hover { color: #d4a853; }
+
+    /* Lang hiding logic */
+    body [lang="en"] { display: none; }
+    body.lang-en [lang="fr"] { display: none; }
+    body.lang-en [lang="en"] { display: block; }
+    body.lang-en span[lang="en"],
+    body.lang-en div[lang="en"] { display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Stella Secret</div>
+    <div class="lang-switcher">
+      <button class="lang-btn" id="lang-toggle">EN</button>
+    </div>
+
+    <h1 lang="fr">Politiques de confidentialité</h1>
+    <h1 lang="en">Privacy Policies</h1>
+
+    <p class="subtitle" lang="fr">Sélectionnez une application pour consulter sa politique de confidentialité.</p>
+    <p class="subtitle" lang="en">Select an application to view its privacy policy.</p>
+  </header>
+
+  <main>
+    <div class="apps">
+      <!-- AsthmeTrack -->
+      <a class="app-link" id="link-asthmetrack" href="https://stellasecret.github.io/privacy-pages/asthmetrack/privacy.html">
+        <div class="app-info">
+          <div class="app-name">AsthmeTrack</div>
+          <div class="app-desc" lang="fr">Suivi asthme — DEP, SpO₂, Easyhaler</div>
+          <div class="app-desc" lang="en">Asthma tracking — PEF, SpO₂, Easyhaler</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- TripMind -->
+      <a class="app-link" id="link-tripmind" href="https://stellasecret.github.io/privacy-pages/tripmind/privacy.html">
+        <div class="app-info">
+          <div class="app-name">TripMind</div>
+          <div class="app-desc" lang="fr">Assistant de déplacement intelligent pour la France</div>
+          <div class="app-desc" lang="en">Smart travel assistant for France</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- StrategicJournal -->
+      <a class="app-link" id="link-strategicjournal" href="https://stellasecret.github.io/privacy-pages/strategicjournal/privacy.html">
+        <div class="app-info">
+          <div class="app-name">StrategicJournal</div>
+          <div class="app-desc" lang="fr">Journal de décisions, prédictions et calibration cognitive</div>
+          <div class="app-desc" lang="en">Decision journal, predictions and cognitive calibration</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- GameTracker -->
+      <a class="app-link" id="link-gametracker" href="https://stellasecret.github.io/privacy-pages/gametracker/privacy.html">
+        <div class="app-info">
+          <div class="app-name">GameTracker</div>
+          <div class="app-desc" lang="fr">Suivi de scores pour jeux de société</div>
+          <div class="app-desc" lang="en">Board game score tracker</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- PeopleModeler -->
+      <a class="app-link" id="link-peoplemodeler" href="https://stellasecret.github.io/privacy-pages/peoplemodeler/privacy.html">
+        <div class="app-info">
+          <div class="app-name">PeopleModeler</div>
+          <div class="app-desc" lang="fr">Modélisation comportementale</div>
+          <div class="app-desc" lang="en">Behavioural modelling</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- SmartShoppingCalculator -->
+      <a class="app-link" id="link-smartshoppingcalculator" href="https://stellasecret.github.io/privacy-pages/smartshoppingcalculator/privacy.html">
+        <div class="app-info">
+          <div class="app-name">SmartShoppingCalculator</div>
+          <div class="app-desc" lang="fr">Comparaison de prix unitaires</div>
+          <div class="app-desc" lang="en">Compare unit prices</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+
+      <!-- CVGenerator -->
+      <a class="app-link" id="link-cvgenerator" href="https://stellasecret.github.io/privacy-pages/cvgenerator/privacy.html">
+        <div class="app-info">
+          <div class="app-name">CVGenerator</div>
+          <div class="app-desc" lang="fr">Générateur de CV optimal</div>
+          <div class="app-desc" lang="en">Optimal CV generator</div>
+        </div>
+        <span class="app-arrow">→</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Stella Secret</span>
+    <a href="mailto:thaikhuevincent.nguyen@gmail.com">Contact</a>
+  </footer>
+
+  <script>
+    var btn = document.getElementById('lang-toggle');
+    var isEn = false;
+    var apps = [
+      { id: 'link-tripmind', fr: 'tripmind/privacy.html', en: 'tripmind/privacy-en.html' },
+      { id: 'link-asthmetrack', fr: 'asthmetrack/privacy.html', en: 'asthmetrack/privacy-en.html' },
+      { id: 'link-strategicjournal', fr: 'strategicjournal/privacy.html', en: 'strategicjournal/privacy-en.html' },
+      { id: 'link-gametracker', fr: 'gametracker/privacy.html', en: 'gametracker/privacy-en.html' },
+      { id: 'link-peoplemodeler', fr: 'peoplemodeler/privacy.html', en: 'peoplemodeler/privacy-en.html' },
+      { id: 'link-smartshoppingcalculator', fr: 'smartshoppingcalculator/privacy.html', en: 'smartshoppingcalculator/privacy-en.html' },
+      { id: 'link-cvgenerator', fr: 'cvgenerator/privacy.html', en: 'cvgenerator/privacy-en.html' }
+    ];
+
+    function updateUI() {
+      if (isEn) {
+        document.body.classList.add('lang-en');
+        btn.textContent = 'FR';
+      } else {
+        document.body.classList.remove('lang-en');
+        btn.textContent = 'EN';
+      }
+
+      apps.forEach(function(app) {
+        var link = document.getElementById(app.id);
+        if (link) {
+          link.href = 'https://stellasecret.github.io/privacy-pages/' + (isEn ? app.en : app.fr);
+        }
+      });
+    }
+
+    btn.addEventListener('click', function() {
+      isEn = !isEn;
+      updateUI();
+    });
+
+    // Detect browser language
+    if (navigator.language && navigator.language.startsWith('en')) {
+      isEn = true;
+      updateUI();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0d0f14; --surface: #161920; --border: #2a2f3d;
+  --text: #e8eaf0; --muted: #9ca3af;
+  --accent: #E94560; --green: #00D4AA;
+}
+</style>
+<title>Politique de confidentialité — People Modeler</title>
+</head>
+<body>
+<div class="container">
+
+<div class="lang-switcher">
+  <a href="privacy-en.html" class="lang-link">EN</a>
+</div>
+
+<a href="../" class="back">← Toutes les politiques</a>
+  <header>
+    <div class="app-name">People Modeler</div>
+    <h1>Politique de confidentialité</h1>
+    <div class="updated">Dernière mise à jour : mai 2026</div>
+  </header>
+
+  <div class="highlight">
+    <p>
+      <strong>En résumé :</strong> People Modeler stocke toutes vos données
+      <strong>localement sur votre appareil</strong>, sans serveur, sans compte obligatoire,
+      sans tracking. La synchronisation Google Drive est entièrement optionnelle et sous
+      votre contrôle exclusif.
+    </p>
+  </div>
+
+  <h2>1. Qui sommes-nous ?</h2>
+  <p>
+    People Modeler est une application mobile de modélisation comportementale,
+    développée à titre personnel. Elle n'est pas exploitée par une société commerciale.
+    Identifiant de l'application : <code>com.peoplemodeler</code>.
+  </p>
+
+  <h2>2. Données collectées</h2>
+  <p>
+    People Modeler ne collecte, ne stocke et ne transmet <strong>aucune donnée personnelle
+    à nos serveurs</strong> — nous n'en possédons pas. Les fiches de profil, motivations,
+    biais, prédictions et notes que vous créez restent sur votre appareil.
+  </p>
+  <p>
+    <span class="badge badge-red">✕</span> Aucune donnée d'identification (nom, email, téléphone)<br>
+    <span class="badge badge-red">✕</span> Aucune donnée de localisation<br>
+    <span class="badge badge-red">✕</span> Aucune donnée de navigation ou d'usage transmise<br>
+    <span class="badge badge-red">✕</span> Aucun identifiant publicitaire<br>
+    <span class="badge badge-red">✕</span> Aucune donnée biométrique ou de santé<br>
+    <span class="badge badge-red">✕</span> Aucun serveur distant ne reçoit vos profils
+  </p>
+
+  <h2>3. Stockage local des données</h2>
+  <p>
+    L'intégralité de vos données — fiches personnes, motivations, biais cognitifs,
+    profils OCEAN, prédictions et résultats — est stockée dans une base de données SQLite
+    locale sur votre appareil via Android Room. Ces données ne quittent jamais votre
+    téléphone sauf si vous activez explicitement la synchronisation Google Drive
+    (voir section 4).
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Données stockées uniquement sur votre appareil.<br>
+    <span class="badge badge-green">✓</span> Aucune base de données distante associée à l'application.<br>
+    <span class="badge badge-green">✓</span> La désinstallation efface toutes vos données locales.
+  </p>
+
+  <h2>4. Synchronisation Google Drive (optionnelle)</h2>
+  <p>
+    People Modeler propose une fonctionnalité optionnelle de sauvegarde via votre
+    compte Google personnel. Cette fonctionnalité est <strong>inactive par défaut</strong>
+    et ne s'active que si vous vous connectez explicitement avec votre compte Google.
+  </p>
+  <p>
+    Lorsque vous activez la synchronisation :
+  </p>
+  <ul>
+    <li>Vos données sont sauvegardées dans le <strong>dossier App Data privé</strong> de votre
+    Google Drive personnel — un espace inaccessible aux autres applications et non visible
+    dans l'interface Drive.</li>
+    <li>Seule l'adresse e-mail de votre compte Google est utilisée pour identifier
+    la session. Elle est stockée localement sur votre appareil uniquement.</li>
+    <li>La synchronisation utilise le scope OAuth <code>drive.appdata</code> — le niveau
+    de permission le plus restreint, qui ne donne accès qu'au dossier privé de cette
+    application.</li>
+    <li>Vous pouvez vous déconnecter à tout moment depuis l'onglet Drive de l'application,
+    ce qui supprime immédiatement la session locale.</li>
+    <li>Vous pouvez supprimer vos données Drive à tout moment via
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account → Applications tierces</a>.</li>
+  </ul>
+  <p>
+    <span class="badge badge-blue">⚠</span> La gestion des données transmises à Google
+    est régie par la
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>,
+    indépendamment de People Modeler.
+  </p>
+
+  <h2>5. Services tiers</h2>
+  <p>
+    En dehors de la synchronisation Google Drive optionnelle, People Modeler
+    <strong>n'utilise aucun service tiers</strong> : pas d'API externe, pas de CDN,
+    pas de SDK analytique, pas de service de crash reporting.
+  </p>
+  <p>
+    Les polices d'écriture affichées dans la version web de l'application
+    sont chargées depuis Google Fonts. Google peut collecter votre adresse IP
+    selon ses propres politiques.
+  </p>
+
+  <h2>6. Publicité et analytics</h2>
+  <p>
+    People Modeler ne contient <strong>aucune publicité</strong> et n'intègre
+    aucun outil d'analyse ou de tracking (pas de Firebase Analytics, pas de
+    Crashlytics, pas de SDK publicitaire, pas de pixel de tracking).
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Aucune publicité.<br>
+    <span class="badge badge-green">✓</span> Aucun SDK de tracking.<br>
+    <span class="badge badge-green">✓</span> Aucune donnée vendue à des tiers.
+  </p>
+
+  <h2>7. Permissions Android utilisées</h2>
+  <ul>
+    <li><strong>INTERNET</strong> — obligatoire pour la synchronisation Google Drive
+    optionnelle et le chargement de la version web.</li>
+    <li><strong>Compte Google (GET_ACCOUNTS)</strong> — utilisé uniquement si vous activez
+    la synchronisation Drive. Aucun accès à vos autres comptes ou emails.</li>
+  </ul>
+  <p>People Modeler ne demande <strong>aucune</strong> permission de localisation,
+  d'appareil photo, de contacts, de microphone ou de stockage externe.</p>
+
+  <h2>8. Responsabilité éthique</h2>
+  <p>
+    People Modeler est un outil de compréhension interpersonnelle. Les profils que
+    vous créez concernent des personnes réelles. Nous vous rappelons que :
+  </p>
+  <ul>
+    <li>Les données saisies dans l'application relèvent de <strong>votre responsabilité</strong>
+    en tant qu'utilisateur.</li>
+    <li>L'application doit être utilisée dans un cadre <strong>éthique et bienveillant</strong>,
+    jamais pour nuire, manipuler ou porter atteinte à la vie privée d'autrui.</li>
+    <li>Conformément au RGPD, si vous créez des profils sur des personnes identifiables,
+    vous agissez en tant que responsable de traitement pour ces données.</li>
+  </ul>
+
+  <h2>9. Vos droits (RGPD)</h2>
+  <p>
+    People Modeler ne traitant aucune donnée personnelle sur nos serveurs, les droits
+    d'accès, de rectification et de suppression s'exercent directement sur votre appareil.
+  </p>
+  <ul>
+    <li><strong>Suppression locale :</strong> désinstallez l'application ou supprimez
+    les fiches individuellement depuis l'interface.</li>
+    <li><strong>Suppression Drive :</strong> révoquez l'accès depuis
+    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">myaccount.google.com/permissions</a>.</li>
+  </ul>
+
+  <h2>10. Enfants</h2>
+  <p>
+    People Modeler n'est pas destiné aux enfants de moins de 13 ans et ne collecte
+    sciemment aucune information les concernant.
+  </p>
+
+  <h2>11. Modifications de cette politique</h2>
+  <p>
+    En cas de modification de cette politique, la date de mise à jour sera modifiée
+    en haut de cette page. Les changements significatifs seront signalés dans les
+    notes de mise à jour de l'application sur le Google Play Store.
+  </p>
+
+  <h2>12. Contact</h2>
+  <p>
+    Pour toute question concernant cette politique de confidentialité :
+    <a href="mailto:contact@peoplemodeler.app">contact@peoplemodeler.app</a>
+  </p>
+
+  <footer>
+    People Modeler · Politique de confidentialité · Mai 2026
+  </footer>
+
+</div>
+</body>
+</html>

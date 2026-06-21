@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0d0f14; --surface: #161920; --border: #2a2f3d;
+  --text: #e8eaf0; --muted: #9ca3af;
+  --accent: #6C63FF; --green: #43D9AD;
+}
+</style>
+<title>Politique de confidentialité — Smart Shopping Calculator</title>
+</head>
+<body>
+<div class="container">
+
+  <div class="lang-switcher">
+    <a href="privacy-en.html" class="lang-link">EN</a>
+  </div>
+
+  <a href="../" class="back">← Toutes les politiques</a>
+
+  <header>
+    <div class="app-name">Smart Shopping Calculator</div>
+    <h1>Politique de confidentialité</h1>
+    <div class="updated">Dernière mise à jour : juin 2026</div>
+  </header>
+
+  <div class="highlight">
+    <p>
+      <strong>En résumé :</strong> Smart Shopping Calculator ne collecte aucune donnée personnelle.
+      Tous vos calculs et comparaisons sont effectués localement sur votre appareil.
+      L'application ne communique avec aucun serveur externe, à l'exception de la
+      consultation optionnelle de la base Open Food Facts lors du scan de code-barres.
+    </p>
+  </div>
+
+  <h2>1. Qui sommes-nous ?</h2>
+  <p>
+    Smart Shopping Calculator est une application Android de comparaison de prix unitaires
+    (papier toilette, protéines en poudre), développée à titre personnel par StellaSecret.
+    Elle n'est pas exploitée par une société commerciale.
+    Identifiant de l'application : <code>com.stellasecret.smartshoppingcalculator</code>.
+  </p>
+
+  <h2>2. Données collectées</h2>
+  <p>
+    Smart Shopping Calculator ne collecte, ne stocke et ne transmet <strong>aucune donnée personnelle</strong>
+    vers nos serveurs. Nous n'avons pas de serveurs propres.
+  </p>
+  <p>
+    <span class="badge badge-red">✕</span> Aucune donnée d'identification (nom, email, téléphone)<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée de localisation<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée de navigation ou d'usage<br/>
+    <span class="badge badge-red">✕</span> Aucun identifiant publicitaire<br/>
+    <span class="badge badge-red">✕</span> Aucune donnée biométrique ou de santé
+  </p>
+  <p>
+    Les seules données créées par l'application sont les prix et caractéristiques des produits
+    que vous saisissez vous-même. Ces données sont stockées localement dans votre navigateur
+    (via <code>localStorage</code>) si vous utilisez la fonctionnalité de sauvegarde de session.
+    Elles ne quittent jamais votre appareil.
+  </p>
+
+  <h2>3. Scan de code-barres — Open Food Facts (optionnel)</h2>
+  <p>
+    Smart Shopping Calculator propose une fonctionnalité de scan de code-barres pour remplir
+    automatiquement les champs d'une protéine en poudre. Cette fonctionnalité est
+    <strong>entièrement optionnelle</strong> et ne se déclenche que sur votre action explicite.
+  </p>
+  <ul>
+    <li>La reconnaissance du code-barres s'effectue <strong>entièrement sur votre appareil</strong> via ML Kit (Google) — aucune image n'est envoyée à des serveurs externes.</li>
+    <li>Une fois le code-barres détecté, l'application interroge l'API publique
+      <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>
+      pour récupérer les informations nutritionnelles du produit (nom, poids, teneur en protéines).</li>
+    <li>Seul le code-barres nu (ex. <code>3270160513847</code>) est transmis à Open Food Facts — aucune donnée vous identifiant n'est envoyée.</li>
+    <li>Open Food Facts est un projet à but non lucratif. Consultez leur
+      <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>
+      pour connaître leurs pratiques.</li>
+    <li>Si le produit n'est pas trouvé ou en l'absence de réseau, aucune donnée n'est transmise et vous pouvez saisir les informations manuellement.</li>
+  </ul>
+  <p>
+    <span class="badge badge-blue">ℹ</span> Cette fonctionnalité est disponible uniquement dans l'application Android, pas dans la version web.
+  </p>
+
+  <h2>4. Caméra</h2>
+  <p>
+    L'application demande l'accès à la caméra uniquement lorsque vous déclenchez un scan
+    de code-barres. La permission caméra est utilisée exclusivement pour capturer une photo
+    du produit à scanner. Aucune image n'est conservée, transmise ou analysée au-delà de
+    la lecture du code-barres.
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> La permission caméra n'est jamais demandée au démarrage.<br/>
+    <span class="badge badge-green">✓</span> Aucune image n'est stockée ou envoyée à des serveurs.<br/>
+    <span class="badge badge-green">✓</span> Vous pouvez refuser la permission — l'application reste entièrement fonctionnelle en saisie manuelle.
+  </p>
+
+  <h2>5. Stockage local</h2>
+  <p>
+    Si vous utilisez la fonctionnalité « Sauvegarder la session », vos données de comparaison
+    (prix, caractéristiques des produits) sont enregistrées dans le stockage local de votre
+    navigateur via <code>localStorage</code>.
+  </p>
+  <p>
+    <span class="badge badge-green">✓</span> Ces données restent sur votre appareil et ne sont jamais transmises.<br/>
+    <span class="badge badge-green">✓</span> Vous pouvez les supprimer à tout moment via le bouton « Effacer la session » dans l'application.<br/>
+    <span class="badge badge-green">✓</span> La désinstallation de l'application supprime toutes les données locales.
+  </p>
+
+  <h2>6. Publicité et analytics</h2>
+  <p>
+    Smart Shopping Calculator ne contient aucune publicité et n'intègre aucun outil d'analyse
+    ou de tracking (pas de Firebase Analytics, pas de Crashlytics, pas de SDK publicitaire,
+    pas de cookies tiers).
+  </p>
+
+  <h2>7. Permissions Android utilisées</h2>
+  <ul>
+    <li><strong>CAMERA</strong> — utilisée uniquement lors d'un scan de code-barres, sur votre action explicite.</li>
+    <li><strong>INTERNET</strong> — utilisée uniquement pour interroger Open Food Facts lors d'un scan de code-barres, sur votre action explicite.</li>
+  </ul>
+  <p>L'application ne demande aucune autre permission (pas d'accès aux contacts, à la localisation,
+  au stockage externe, au microphone, etc.).</p>
+
+  <h2>8. Vos droits (RGPD)</h2>
+  <p>
+    Smart Shopping Calculator ne traitant aucune donnée personnelle sur ses propres serveurs,
+    les droits d'accès, de rectification et de suppression s'exercent naturellement :
+    vos données sont sur votre appareil, sous votre contrôle total.
+  </p>
+  <p>
+    Pour toute question relative à la confidentialité, vous pouvez nous contacter à l'adresse
+    indiquée en section 10.
+  </p>
+
+  <h2>9. Enfants</h2>
+  <p>
+    Smart Shopping Calculator n'est pas spécifiquement destiné aux enfants de moins de 13 ans
+    et ne collecte sciemment aucune information les concernant.
+  </p>
+
+  <h2>10. Modifications de cette politique</h2>
+  <p>
+    En cas de modification de cette politique, la date de mise à jour sera modifiée en haut
+    de cette page. Les changements significatifs seront signalés dans les notes de mise à jour
+    de l'application sur le Google Play Store.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    Pour toute question concernant cette politique de confidentialité :
+    <a href="mailto:thaikhuevincent.nguyen@gmail.com">thaikhuevincent.nguyen@gmail.com</a>
+  </p>
+
+  <footer>
+    Smart Shopping Calculator · Politique de confidentialité · Juin 2026
+  </footer>
+
+</div>
+</body>
+</html>
