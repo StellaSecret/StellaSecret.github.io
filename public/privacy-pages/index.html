@@ -105,6 +105,10 @@
     body.lang-en [lang="en"] { display: block; }
     body.lang-en span[lang="en"],
     body.lang-en div[lang="en"] { display: inline-block; }
+    footer a[lang] { display: none; }
+    footer a[lang="fr"] { display: inline; }
+    body.lang-en footer a[lang="fr"] { display: none; }
+    body.lang-en footer a[lang="en"] { display: inline; }
   </style>
 </head>
 <body>
@@ -197,7 +201,12 @@
 
   <footer>
     <span>© 2026 Stella Secret</span>
-    <a href="mailto:thaikhuevincent.nguyen@gmail.com">Contact</a>
+    <span>
+      <a href="../mentions-legales/" id="footer-legal-link" lang="fr">Mentions légales</a>
+      <a href="../mentions-legales/index-en.html" id="footer-legal-link-en" lang="en">Legal notice</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:thaikhuevincent.nguyen@gmail.com">Contact</a>
+    </span>
   </footer>
 
   <script>

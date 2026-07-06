@@ -434,6 +434,8 @@ footer a:hover{ color:var(--t1); }
   <span>
     <a href="/privacy-pages/" data-i18n="footerPrivacy">Privacy policies</a>
     &nbsp;·&nbsp;
+    <a href="/mentions-legales/" id="footer-legal-link" data-i18n="footerLegal">Legal notice</a>
+    &nbsp;·&nbsp;
     <a href="https://github.com/StellaSecret" target="_blank" rel="noopener">GitHub</a>
   </span>
 </footer>
@@ -465,6 +467,7 @@ footer a:hover{ color:var(--t1); }
       linkApk: "APK",
       footerCopy: "© 2026 StellaSecret",
       footerPrivacy: "Privacy policies",
+      footerLegal: "Legal notice",
       themeLabelDark: "DARK",
       themeLabelLight: "LIGHT",
       themeAriaToDark: "Switch to dark theme",
@@ -495,6 +498,7 @@ footer a:hover{ color:var(--t1); }
       linkApk: "APK",
       footerCopy: "© 2026 StellaSecret",
       footerPrivacy: "Politiques de confidentialité",
+      footerLegal: "Mentions légales",
       themeLabelDark: "SOMBRE",
       themeLabelLight: "CLAIR",
       themeAriaToDark: "Passer au thème sombre",
@@ -542,6 +546,10 @@ footer a:hover{ color:var(--t1); }
       var key = el.getAttribute('data-i18n');
       if(dict[key]){ el.textContent = dict[key]; }
     });
+    var legalLink = document.getElementById('footer-legal-link');
+    if(legalLink){
+      legalLink.setAttribute('href', lang === 'fr' ? '/mentions-legales/' : '/mentions-legales/index-en.html');
+    }
     langLabel.textContent = lang === 'fr' ? 'FR' : 'EN';
     langBtn.setAttribute('aria-label', dict.langAria);
     applyTheme(currentTheme);
