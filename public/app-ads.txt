@@ -1,0 +1,14 @@
+# app-ads.txt — https://stellasecret.github.io/app-ads.txt
+#
+# Only GameTracker uses ads at the moment (via AdMob). If you add ads to
+# another app hosted under this domain later, add one line per distinct
+# ad network account used by that app — this file is domain-wide, not
+# per-app, so every app whose Play Store listing points at this site is
+# covered by whatever's listed here.
+#
+# Replace pub-XXXXXXXXXXXXXXXX with your real AdMob Publisher ID (Ad
+# console → Settings → Account information — same 16-digit number as
+# GameTracker's App ID, without the ~YYYYYYYYYY suffix or "ca-app-" prefix).
+# The last field is Google's fixed AdMob certification authority ID —
+# always exactly this value, not something you generate.
+google.com, pub-6763366781822211, DIRECT, f08c47fec0942fa0
