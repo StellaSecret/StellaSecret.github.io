@@ -38,12 +38,12 @@ test.describe('Landing page', () => {
     await expect(page.locator('h1')).toBeVisible();
   });
 
-  test('shows 2 released app cards', async ({ page }) => {
+  test('shows 3 released app cards', async ({ page }) => {
     // Use data-i18n attribute — text changes with FR/EN locale
     const released = page.locator('section.section-block').filter({
       has: page.locator('[data-i18n="sectionReleased"]'),
     });
-    await expect(released.locator('article.card')).toHaveCount(2);
+    await expect(released.locator('article.card')).toHaveCount(3);
   });
 
   test('shows 3 coming-soon app cards', async ({ page }) => {
@@ -55,8 +55,8 @@ test.describe('Landing page', () => {
 
   test('each card has a visible title', async ({ page }) => {
     const titles = page.locator('.card h2.title');
-    await expect(titles).toHaveCount(5);
-    for (let i = 0; i < 5; i++) {
+    await expect(titles).toHaveCount(6);
+    for (let i = 0; i < 6; i++) {
       await expect(titles.nth(i)).toBeVisible();
     }
   });
