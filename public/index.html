@@ -182,6 +182,7 @@ h1{
 .card.shopping{ border-top:2px solid var(--amber); }
 .card.gametracker{ border-top:2px solid var(--org); }
 .card.peoplemodeler{ border-top:2px solid var(--indigo); }
+.card.cvgenerator{ border-top:2px solid var(--cyan); }
 
 .eyebrow{
   font-family:var(--fm); font-size:.6rem;
@@ -193,6 +194,7 @@ h1{
 .card.shopping .eyebrow{ color:var(--amber); }
 .card.gametracker .eyebrow{ color:var(--org); }
 .card.peoplemodeler .eyebrow{ color:var(--indigo); }
+.card.cvgenerator .eyebrow{ color:var(--cyan); }
 
 .card h2.title{
   font-family:var(--fd); font-weight:800; font-size:1.5rem;
@@ -214,6 +216,7 @@ h1{
 .card.shopping .tag{ background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.2); color:var(--amber); }
 .card.gametracker .tag{ background:rgba(249,115,22,.1); border:1px solid rgba(249,115,22,.2); color:var(--org); }
 .card.peoplemodeler .tag{ background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.2); color:var(--indigo); }
+.card.cvgenerator .tag{ background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.2); color:var(--cyan); }
 
 .links{ display:flex; flex-wrap:wrap; gap:10px; }
 .links a{
@@ -267,6 +270,8 @@ h1{
 .card.gametracker .badge-soon .dot{ background:var(--org); }
 .card.peoplemodeler .badge-soon{ border-color:rgba(99,102,241,.4); color:var(--indigo); }
 .card.peoplemodeler .badge-soon .dot{ background:var(--indigo); }
+.card.cvgenerator .badge-soon{ border-color:rgba(6,182,212,.4); color:var(--cyan); }
+.card.cvgenerator .badge-soon .dot{ background:var(--cyan); }
 .card .badge-soon{ margin-bottom:14px; }
 
 /* ---------- Footer ---------- */
@@ -426,6 +431,23 @@ footer a:hover{ color:var(--t1); }
         <a href="https://github.com/StellaSecret/GameTracker" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
       </div>
     </article>
+
+    <article class="card cvgenerator">
+      <div class="eyebrow" data-i18n="cvgeneratorEyebrow">Career</div>
+      <h2 class="title">CVGenerator</h2>
+      <p class="desc" data-i18n="cvgeneratorDesc">A fully client-side CV builder. Paste any job posting, match your experience against it, and download a tailored PDF — all in your browser, nothing leaves your device.</p>
+      <div class="tags">
+        <span class="tag">Rust</span>
+        <span class="tag">Dioxus</span>
+        <span class="tag">WASM</span>
+        <span class="tag">Web</span>
+      </div>
+      <div class="badge-soon"><span class="dot"></span><span data-i18n="badgeInDevelopment">In development</span></div>
+      <div class="links">
+        <a href="https://stellasecret.github.io/CVGenerator/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/CVGenerator" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -454,11 +476,13 @@ footer a:hover{ color:var(--t1); }
       shoppingEyebrow: "Shopping",
       gamesEyebrow: "Games",
       reflectionEyebrow: "Reflection",
+      cvgeneratorEyebrow: "Career",
       tripmindDesc: "One place for weather, air quality, pollen, road routes and public transit — instead of five separate websites before every trip. Runs entirely on free, public APIs, with no server in between.",
       asthmetrackDesc: "Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.",
       shoppingDesc: "Compares everyday products by their real unit cost — toilet paper by price per gram of paper, protein powder by price per gram of protein. No ads, no account, works fully offline.",
       gametrackerDesc: "Score tracking for board games, with three game modes, player stats, and optional Google Drive backup. A premium tier adds real-time shared groups.",
       peoplemodelerDesc: "A private journal for understanding the people in your life a little better — their motivations, patterns, and what tends to set them off — to build empathy, not to act behind their back.",
+      cvgeneratorDesc: "A fully client-side CV builder. Paste any job posting, match your experience against it, and download a tailored PDF — all in your browser, nothing leaves your device.",
       badgeComingSoon: "Coming soon to Play Store",
       badgeInDevelopment: "In development",
       linkPlayStore: "Play Store",
@@ -485,11 +509,13 @@ footer a:hover{ color:var(--t1); }
       shoppingEyebrow: "Courses",
       gamesEyebrow: "Jeux",
       reflectionEyebrow: "Réflexion",
+      cvgeneratorEyebrow: "Carrière",
       tripmindDesc: "Météo, qualité de l'air, pollens, itinéraires routiers et transports en commun, réunis au même endroit, plutôt que cinq sites différents avant chaque trajet. Fonctionne uniquement avec des APIs publiques et gratuites, sans serveur intermédiaire.",
       asthmetrackDesc: "Débit de pointe, SpO₂ et prises d'Easyhaler, suivis assez précisément pour apporter de vrais chiffres en consultation plutôt qu'une estimation. Gratuit, sans publicité, et vos données restent sur votre appareil par défaut.",
       shoppingDesc: "Compare le coût réel des produits du quotidien — le papier toilette au prix par gramme de papier, les protéines en poudre au prix par gramme de protéine. Sans publicité, sans compte, fonctionne entièrement hors ligne.",
       gametrackerDesc: "Suivi des scores pour les jeux de société, avec trois modes de jeu, des statistiques par joueur, et une sauvegarde optionnelle sur Google Drive. Une offre premium ajoute des groupes synchronisés en temps réel.",
       peoplemodelerDesc: "Un journal privé pour mieux comprendre les personnes de votre entourage — leurs motivations, leurs habitudes, ce qui les fait réagir — pour développer son empathie, pas pour agir dans leur dos.",
+      cvgeneratorDesc: "Un générateur de CV entièrement côté client. Collez une offre d'emploi, faites correspondre votre expérience et téléchargez un PDF personnalisé — tout dans votre navigateur, rien ne quitte votre appareil.",
       badgeComingSoon: "Bientôt sur le Play Store",
       badgeInDevelopment: "En développement",
       linkPlayStore: "Play Store",
