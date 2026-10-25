@@ -38,19 +38,19 @@ test.describe('Landing page', () => {
     await expect(page.locator('h1')).toBeVisible();
   });
 
-  test('shows 3 released app cards', async ({ page }) => {
+  test('shows 5 released app cards', async ({ page }) => {
     // Use data-i18n attribute — text changes with FR/EN locale
     const released = page.locator('section.section-block').filter({
       has: page.locator('[data-i18n="sectionReleased"]'),
     });
-    await expect(released.locator('article.card')).toHaveCount(3);
+    await expect(released.locator('article.card')).toHaveCount(5);
   });
 
-  test('shows 3 coming-soon app cards', async ({ page }) => {
+  test('shows 1 coming-soon app card', async ({ page }) => {
     const soon = page.locator('section.section-block').filter({
       has: page.locator('[data-i18n="sectionComingSoon"]'),
     });
-    await expect(soon.locator('article.card')).toHaveCount(3);
+    await expect(soon.locator('article.card')).toHaveCount(1);
   });
 
   test('each card has a visible title', async ({ page }) => {
