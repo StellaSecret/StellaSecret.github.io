@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; script-src 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self'">
 <title>StellaSecret — small tools, built around real problems</title>
-<meta name="description" content="TripMind, AsthmeTrack, GameTracker, SmartShoppingCalculator and PeopleModeler — small, focused apps built by StellaSecret to solve problems found in everyday life.">
+<meta name="description" content="TripMind, AsthmeTrack, GameTracker, SmartShoppingCalculator, PeopleModeler and appDataFolder Browser — small, focused tools built by StellaSecret to solve problems found in everyday life.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;700&family=Outfit:wght@400;600;800&display=swap');
 
@@ -164,9 +164,9 @@ h1{
 .projects{
   display:grid; grid-template-columns:1fr 1fr; gap:20px;
 }
-.projects.soon{ grid-template-columns:repeat(3, 1fr); }
-@media (max-width:880px){ .projects.soon{ grid-template-columns:1fr 1fr; } }
-@media (max-width:720px){ .projects{ grid-template-columns:1fr; } .projects.soon{ grid-template-columns:1fr; } }
+.projects.soon,.projects.tools{ grid-template-columns:repeat(3, 1fr); }
+@media (max-width:880px){ .projects.soon,.projects.tools{ grid-template-columns:1fr 1fr; } }
+@media (max-width:720px){ .projects{ grid-template-columns:1fr; } .projects.soon,.projects.tools{ grid-template-columns:1fr; } }
 
 .card{
   background:var(--bg1);
@@ -183,6 +183,7 @@ h1{
 .card.gametracker{ border-top:2px solid var(--org); }
 .card.peoplemodeler{ border-top:2px solid var(--indigo); }
 .card.cvgenerator{ border-top:2px solid var(--cyan); }
+.card.appdata{ border-top:2px solid var(--cyan); }
 
 .eyebrow{
   font-family:var(--fm); font-size:.6rem;
@@ -195,6 +196,7 @@ h1{
 .card.gametracker .eyebrow{ color:var(--org); }
 .card.peoplemodeler .eyebrow{ color:var(--indigo); }
 .card.cvgenerator .eyebrow{ color:var(--cyan); }
+.card.appdata .eyebrow{ color:var(--cyan); }
 
 .card h2.title{
   font-family:var(--fd); font-weight:800; font-size:1.5rem;
@@ -217,6 +219,7 @@ h1{
 .card.gametracker .tag{ background:rgba(249,115,22,.1); border:1px solid rgba(249,115,22,.2); color:var(--org); }
 .card.peoplemodeler .tag{ background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.2); color:var(--indigo); }
 .card.cvgenerator .tag{ background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.2); color:var(--cyan); }
+.card.appdata .tag{ background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.2); color:var(--cyan); }
 
 .links{ display:flex; flex-wrap:wrap; gap:10px; }
 .links a{
@@ -239,6 +242,7 @@ h1{
 .card.shopping .links a.primary{ background:linear-gradient(135deg,var(--amber),var(--amber-dim)); box-shadow:var(--btn-shadow-amber); }
 .card.gametracker .links a.primary{ background:linear-gradient(135deg,var(--org),var(--org-dim)); box-shadow:var(--btn-shadow-org); }
 .card.peoplemodeler .links a.primary{ background:linear-gradient(135deg,var(--indigo),var(--indigo-dim)); box-shadow:var(--btn-shadow-indigo); }
+.card.appdata .links a.primary{ background:linear-gradient(135deg,var(--cyan),#0891B2); box-shadow:0 6px 22px rgba(6,182,212,.35); }
 
 .links a:hover{ transform:translateY(-1px); }
 .card.tripmind .links a:not(.primary):hover{ border-color:var(--blue); }
@@ -246,6 +250,7 @@ h1{
 .card.shopping .links a:not(.primary):hover{ border-color:var(--amber); }
 .card.gametracker .links a:not(.primary):hover{ border-color:var(--org); }
 .card.peoplemodeler .links a:not(.primary):hover{ border-color:var(--indigo); }
+.card.appdata .links a:not(.primary):hover{ border-color:var(--cyan); }
 .links a:focus-visible{ outline:2px solid var(--t1); outline-offset:2px; }
 
 /* ---------- Coming soon badge ---------- */
@@ -309,7 +314,7 @@ footer a:hover{ color:var(--t1); }
 
 <section class="hero wrap">
   <h1 data-i18n="heroTitle">Small tools, built around real problems.</h1>
-  <p data-i18n="heroBody">We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Five of those tools, below.</p>
+  <p data-i18n="heroBody">We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Seven of those tools, below.</p>
 </section>
 
 <div class="signature wrap" role="presentation" aria-hidden="true">
@@ -427,6 +432,33 @@ footer a:hover{ color:var(--t1); }
 
 <section class="section-block wrap">
   <div class="section-head">
+    <h2 data-i18n="sectionTools">Tools</h2>
+    <div class="rule"></div>
+  </div>
+
+  <div class="projects tools">
+
+    <article class="card appdata">
+      <div class="eyebrow" data-i18n="toolsEyebrow">Utility</div>
+      <h2 class="title">appDataFolder Browser</h2>
+      <p class="desc" data-i18n="appdataDesc">Browse, download and delete revisions in Google Drive's hidden appDataFolder — handy for recovering app backups. Runs fully in your browser, with no server in between.</p>
+      <div class="tags">
+        <span class="tag">Rust</span>
+        <span class="tag">Dioxus</span>
+        <span class="tag">WASM</span>
+        <span class="tag">Web</span>
+      </div>
+      <div class="links">
+        <a class="primary" href="https://stellasecret.github.io/gdrive-appdata-browser/" target="_blank" rel="noopener" data-i18n="linkOpenApp">Open app</a>
+        <a href="https://github.com/StellaSecret/gdrive-appdata-browser" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section-block wrap">
+  <div class="section-head">
     <h2 data-i18n="sectionComingSoon">Coming soon</h2>
     <div class="rule"></div>
   </div>
@@ -469,8 +501,9 @@ footer a:hover{ color:var(--t1); }
     en: {
       tagline: "SOFTWARE / SIDE PROJECTS",
       heroTitle: "Small tools, built around real problems.",
-      heroBody: "We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Six of those tools, below.",
+      heroBody: "We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Seven of those tools, below.",
       sectionReleased: "Released",
+      sectionTools: "Tools",
       sectionComingSoon: "Coming soon",
       travelEyebrow: "Travel",
       healthEyebrow: "Health",
@@ -478,16 +511,19 @@ footer a:hover{ color:var(--t1); }
       gamesEyebrow: "Games",
       reflectionEyebrow: "Reflection",
       cvgeneratorEyebrow: "Career",
+      toolsEyebrow: "Utility",
       tripmindDesc: "One place for weather, air quality, pollen, road routes and public transit — instead of five separate websites before every trip. Runs entirely on free, public APIs, with no server in between.",
       asthmetrackDesc: "Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.",
       shoppingDesc: "Compares everyday products by their real unit cost — toilet paper by price per gram of paper, protein powder by price per gram of protein. No ads, no account, works fully offline.",
       gametrackerDesc: "Score tracking for board games, with three game modes, player stats, and optional Google Drive backup. A premium tier adds real-time shared groups.",
       peoplemodelerDesc: "A private journal for understanding the people in your life a little better — their motivations, patterns, and what tends to set them off — to build empathy, not to act behind their back.",
       cvgeneratorDesc: "A fully client-side CV builder. Paste any job posting, match your experience against it, and download a tailored PDF — all in your browser, nothing leaves your device.",
+      appdataDesc: "Browse, download and delete revisions in Google Drive's hidden appDataFolder — handy for recovering app backups. Runs fully in your browser, with no server in between.",
       badgeComingSoon: "Coming soon to Play Store",
       badgeInDevelopment: "In development",
       linkPlayStore: "Play Store",
       linkWebsite: "Website",
+      linkOpenApp: "Open app",
       linkSource: "Source",
       linkApk: "APK",
       footerCopy: "© 2026 StellaSecret",
@@ -502,8 +538,9 @@ footer a:hover{ color:var(--t1); }
     fr: {
       tagline: "LOGICIELS / PROJETS PERSONNELS",
       heroTitle: "De petits outils, pensés pour de vrais problèmes.",
-      heroBody: "Nous écrivons des logiciels quand nous tombons sur une friction sans bonne solution — trop d'onglets ouverts pour préparer un trajet, aucun bon moyen de suivre l'asthme d'un proche sans payer. Six de ces outils, ci-dessous.",
+      heroBody: "Nous écrivons des logiciels quand nous tombons sur une friction sans bonne solution — trop d'onglets ouverts pour préparer un trajet, aucun bon moyen de suivre l'asthme d'un proche sans payer. Sept de ces outils, ci-dessous.",
       sectionReleased: "Disponibles",
+      sectionTools: "Outils",
       sectionComingSoon: "À venir",
       travelEyebrow: "Voyage",
       healthEyebrow: "Santé",
@@ -511,16 +548,19 @@ footer a:hover{ color:var(--t1); }
       gamesEyebrow: "Jeux",
       reflectionEyebrow: "Réflexion",
       cvgeneratorEyebrow: "Carrière",
+      toolsEyebrow: "Utilitaire",
       tripmindDesc: "Météo, qualité de l'air, pollens, itinéraires routiers et transports en commun, réunis au même endroit, plutôt que cinq sites différents avant chaque trajet. Fonctionne uniquement avec des APIs publiques et gratuites, sans serveur intermédiaire.",
       asthmetrackDesc: "Débit de pointe, SpO₂ et prises d'Easyhaler, suivis assez précisément pour apporter de vrais chiffres en consultation plutôt qu'une estimation. Gratuit, sans publicité, et vos données restent sur votre appareil par défaut.",
       shoppingDesc: "Compare le coût réel des produits du quotidien — le papier toilette au prix par gramme de papier, les protéines en poudre au prix par gramme de protéine. Sans publicité, sans compte, fonctionne entièrement hors ligne.",
       gametrackerDesc: "Suivi des scores pour les jeux de société, avec trois modes de jeu, des statistiques par joueur, et une sauvegarde optionnelle sur Google Drive. Une offre premium ajoute des groupes synchronisés en temps réel.",
       peoplemodelerDesc: "Un journal privé pour mieux comprendre les personnes de votre entourage — leurs motivations, leurs habitudes, ce qui les fait réagir — pour développer son empathie, pas pour agir dans leur dos.",
       cvgeneratorDesc: "Un générateur de CV entièrement côté client. Collez une offre d'emploi, faites correspondre votre expérience et téléchargez un PDF personnalisé — tout dans votre navigateur, rien ne quitte votre appareil.",
+      appdataDesc: "Parcourez, téléchargez et supprimez les révisions du dossier appDataFolder caché de Google Drive — pratique pour récupérer les sauvegardes d'applications. Fonctionne entièrement dans votre navigateur, sans serveur intermédiaire.",
       badgeComingSoon: "Bientôt sur le Play Store",
       badgeInDevelopment: "En développement",
       linkPlayStore: "Play Store",
       linkWebsite: "Site web",
+      linkOpenApp: "Ouvrir l'app",
       linkSource: "Code source",
       linkApk: "APK",
       footerCopy: "© 2026 StellaSecret",

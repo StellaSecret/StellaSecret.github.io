@@ -46,6 +46,13 @@ test.describe('Landing page', () => {
     await expect(released.locator('article.card')).toHaveCount(5);
   });
 
+  test('shows 1 tool card', async ({ page }) => {
+    const tools = page.locator('section.section-block').filter({
+      has: page.locator('[data-i18n="sectionTools"]'),
+    });
+    await expect(tools.locator('article.card')).toHaveCount(1);
+  });
+
   test('shows 1 coming-soon app card', async ({ page }) => {
     const soon = page.locator('section.section-block').filter({
       has: page.locator('[data-i18n="sectionComingSoon"]'),
@@ -55,8 +62,8 @@ test.describe('Landing page', () => {
 
   test('each card has a visible title', async ({ page }) => {
     const titles = page.locator('.card h2.title');
-    await expect(titles).toHaveCount(6);
-    for (let i = 0; i < 6; i++) {
+    await expect(titles).toHaveCount(7);
+    for (let i = 0; i < 7; i++) {
       await expect(titles.nth(i)).toBeVisible();
     }
   });
@@ -133,9 +140,9 @@ test.describe('Privacy index', () => {
     expect(toggled).not.toBe(initial);
   });
 
-  test('shows 7 app links', async ({ page }) => {
+  test('shows 8 app links', async ({ page }) => {
     // Class is .app-link, not .app-card
-    await expect(page.locator('.app-link')).toHaveCount(7);
+    await expect(page.locator('.app-link')).toHaveCount(8);
   });
 
   test('each app link has an id', async ({ page }) => {
@@ -147,6 +154,7 @@ test.describe('Privacy index', () => {
       'link-peoplemodeler',
       'link-smartshoppingcalculator',
       'link-cvgenerator',
+      'link-appdata-browser',
     ];
     for (const id of expectedIds) {
       await expect(page.locator(`#${id}`), `Missing link: #${id}`).toBeAttached();
@@ -186,6 +194,11 @@ const APPS = [
     name: 'CVGenerator',
     fr: '/privacy-pages/cvgenerator/privacy.html',
     en: '/privacy-pages/cvgenerator/privacy-en.html',
+  },
+  {
+    name: 'appDataFolder Browser',
+    fr: '/privacy-pages/appdata-browser/privacy.html',
+    en: '/privacy-pages/appdata-browser/privacy-en.html',
   },
 ];
 
