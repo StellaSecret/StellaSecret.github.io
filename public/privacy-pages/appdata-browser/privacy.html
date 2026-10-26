@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' 'self'; script-src 'none'; img-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0a0f1e; --surface: #111827; --border: #1e3a5f;
+  --text: #f1f5f9; --muted: #94a3b8;
+  --accent: #06b6d4; --green: #10b981;
+}
+</style>
+<title>Politique de confidentialité — appDataFolder Browser</title>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switcher">
+    <a href="privacy-en.html" class="lang-link">EN</a>
+  </div>
+  <a href="../" class="back">← Toutes les politiques</a>
+  <header>
+    <div class="app-name">appDataFolder Browser</div>
+    <h1>Politique de confidentialité</h1>
+    <div class="updated">Dernière mise à jour : octobre 2026</div>
+  </header>
+  <div class="highlight">
+    <p><strong>En résumé :</strong> appDataFolder Browser fonctionne entièrement dans votre navigateur. Il n'envoie aucune donnée aux serveurs de StellaSecret — il n'y en a pas. Il accède à Google Drive uniquement lorsque vous vous connectez, et le jeton d'accès reste en mémoire dans l'onglet du navigateur.</p>
+  </div>
+  <h2>1. Qui sommes-nous ?</h2>
+  <p>appDataFolder Browser est un outil web gratuit et open source permettant de consulter, télécharger et supprimer les révisions des fichiers du dossier <code>appDataFolder</code> caché de Google Drive. Il est publié par StellaSecret à titre personnel et n'est pas exploité par une société commerciale. Le code source est disponible sur <a href="https://github.com/StellaSecret/gdrive-appdata-browser" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+  <h2>2. Données traitées</h2>
+  <p>L'outil lit uniquement les fichiers et révisions du dossier <code>appDataFolder</code> auxquels l'application OAuth connectée est autorisée à accéder. Selon vos actions :</p>
+  <ul>
+    <li><strong>Consultation :</strong> les métadonnées des fichiers et révisions sont lues depuis Google Drive et affichées dans votre navigateur.</li>
+    <li><strong>Téléchargement :</strong> le contenu du fichier sélectionné est téléchargé directement sur votre appareil.</li>
+    <li><strong>Suppression :</strong> les révisions sélectionnées sont définitivement supprimées de Google Drive.</li>
+  </ul>
+  <p>Toutes les opérations se font directement entre votre navigateur et les API de Google. Aucune donnée ne transite par un serveur exploité par StellaSecret, ni n'y est stockée.</p>
+  <h2>3. Authentification Google</h2>
+  <p>La connexion utilise Google Identity Services et OAuth 2.0 avec le scope <code>drive.appdata</code>. Ce scope donne uniquement accès au dossier caché de l'application OAuth demandeuse ; il ne permet pas d'accéder au reste de votre Google Drive.</p>
+  <p>Le Client ID OAuth est un identifiant public, pas un secret. Le jeton d'accès est de courte durée et conservé uniquement en mémoire dans l'onglet du navigateur. Aucun jeton de rafraîchissement n'est demandé. Vous pouvez révoquer l'accès à tout moment depuis <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Compte Google → Applications tierces</a>.</p>
+  <h2>4. Données stockées localement</h2>
+  <p>Seul le Client ID OAuth, qui n'est pas secret, est enregistré dans le <code>localStorage</code> de votre navigateur, afin de ne pas avoir à le coller à chaque visite.</p>
+  <p>
+    <span class="badge badge-green">✓</span> Aucun jeton d'accès ni jeton de rafraîchissement n'est stocké dans le <code>localStorage</code>.<br>
+    <span class="badge badge-green">✓</span> Aucun contenu de fichier ni historique de révisions n'est conservé par l'outil.<br>
+    <span class="badge badge-green">✓</span> Effacer les données du site dans votre navigateur supprime le Client ID enregistré.
+  </p>
+  <h2>5. Publicité et analyse d'audience</h2>
+  <p>appDataFolder Browser ne contient <strong>aucune publicité</strong>, aucun outil d'analyse et aucun cookie de suivi.</p>
+  <h2>6. Services tiers</h2>
+  <ul>
+    <li><strong>Google Drive API et Google Identity Services :</strong> soumis à la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.</li>
+    <li><strong>GitHub Pages :</strong> héberge l'application. GitHub peut traiter des données techniques de connexion comme décrit dans la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">déclaration de confidentialité de GitHub</a>.</li>
+  </ul>
+  <h2>7. Conservation et suppression des données</h2>
+  <p>StellaSecret ne conserve aucune donnée issue de cet outil. La suppression d'une révision est définitive — le dossier <code>appDataFolder</code> de Google Drive n'a pas de corbeille — pensez donc à télécharger ce que vous souhaitez conserver. Pour supprimer le Client ID enregistré localement, effacez les données du site dans votre navigateur.</p>
+  <h2>8. Contact</h2>
+  <p>Pour toute question concernant cette politique de confidentialité : <a href="mailto:contact@stellasecret.com">contact@stellasecret.com</a></p>
+  <footer>appDataFolder Browser · Politique de confidentialité · octobre 2026</footer>
+</div>
+</body>
+</html>

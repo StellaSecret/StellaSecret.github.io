@@ -14,6 +14,9 @@ StellaSecret.github.io/
 │   └── privacy-pages/               # Privacy policies → stellasecret.github.io/privacy-pages/
 │       ├── index.html               # Privacy index (FR/EN toggle)
 │       ├── privacy.css              # Shared stylesheet
+│       ├── appdata-browser/
+│       │   ├── privacy.html         # French policy
+│       │   └── privacy-en.html      # English policy
 │       ├── asthmetrack/
 │       │   ├── privacy.html         # French policy
 │       │   └── privacy-en.html      # English policy
@@ -27,7 +30,7 @@ StellaSecret.github.io/
     └── privacy.spec.js              # Playwright E2E tests (privacy pages)
 ```
 
-Apps covered: `asthmetrack`, `cvgenerator`, `gametracker`, `peoplemodeler`, `smartshoppingcalculator`, `strategicjournal`, `tripmind`.
+Apps covered: `appdata-browser`, `asthmetrack`, `cvgenerator`, `gametracker`, `peoplemodeler`, `smartshoppingcalculator`, `strategicjournal`, `tripmind`.
 
 ---
 

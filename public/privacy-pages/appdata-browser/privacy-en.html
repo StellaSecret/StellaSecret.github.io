@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' 'self'; script-src 'none'; img-src 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../privacy.css">
+<style>
+:root {
+  --bg: #0a0f1e; --surface: #111827; --border: #1e3a5f;
+  --text: #f1f5f9; --muted: #94a3b8;
+  --accent: #06b6d4; --green: #10b981;
+}
+</style>
+<title>Privacy Policy — appDataFolder Browser</title>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switcher">
+    <a href="privacy.html" class="lang-link">FR</a>
+  </div>
+  <a href="../" class="back">← All policies</a>
+  <header>
+    <div class="app-name">appDataFolder Browser</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: October 2026</div>
+  </header>
+  <div class="highlight">
+    <p><strong>Summary:</strong> appDataFolder Browser runs entirely in your browser. It does not send your data to StellaSecret servers — there are none. It accesses Google Drive only when you sign in, and the access token stays in your browser tab's memory.</p>
+  </div>
+  <h2>1. Who we are</h2>
+  <p>appDataFolder Browser is a free, open-source web tool for viewing, downloading and deleting revisions of files in Google Drive's hidden <code>appDataFolder</code>. It is published by StellaSecret as a personal project and is not operated by a commercial entity. The source code is available on <a href="https://github.com/StellaSecret/gdrive-appdata-browser" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+  <h2>2. Data processed</h2>
+  <p>The tool reads only the files and revisions in the <code>appDataFolder</code> that the signed-in OAuth application is allowed to access. Depending on the actions you take:</p>
+  <ul>
+    <li><strong>Listing:</strong> file and revision metadata is read from Google Drive and displayed in your browser.</li>
+    <li><strong>Download:</strong> the selected file content is downloaded directly to your device.</li>
+    <li><strong>Delete:</strong> the selected revisions are permanently deleted from Google Drive.</li>
+  </ul>
+  <p>All operations happen directly between your browser and Google's APIs. No data is routed through, or stored on, a server operated by StellaSecret.</p>
+  <h2>3. Google authentication</h2>
+  <p>Sign-in uses Google Identity Services and OAuth 2.0 with the <code>drive.appdata</code> scope. This scope only grants access to the requesting OAuth application's own hidden folder; it cannot access the rest of your Google Drive.</p>
+  <p>The OAuth Client ID is a public identifier, not a secret. The access token is short-lived and kept only in your browser tab's memory. No refresh token is requested. You can revoke access at any time from <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account → Third-party apps</a>.</p>
+  <h2>4. Data stored locally</h2>
+  <p>Only the non-secret OAuth Client ID is saved in your browser's <code>localStorage</code>, so you do not have to paste it again on your next visit.</p>
+  <p>
+    <span class="badge badge-green">✓</span> No access token or refresh token is stored in <code>localStorage</code>.<br>
+    <span class="badge badge-green">✓</span> No file content or revision history is stored by the tool.<br>
+    <span class="badge badge-green">✓</span> Clearing your browser storage removes the saved Client ID.
+  </p>
+  <h2>5. Advertising and analytics</h2>
+  <p>appDataFolder Browser contains <strong>no advertising</strong>, no analytics, and no tracking cookies.</p>
+  <h2>6. Third-party services</h2>
+  <ul>
+    <li><strong>Google Drive API and Google Identity Services:</strong> subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a>.</li>
+    <li><strong>GitHub Pages:</strong> hosts the application. GitHub may process technical connection data as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.</li>
+  </ul>
+  <h2>7. Data retention and deletion</h2>
+  <p>StellaSecret retains no data from this tool. Deleting a revision is permanent — Google Drive's <code>appDataFolder</code> has no trash — so download anything you want to keep first. To remove the locally saved Client ID, clear the site's data in your browser.</p>
+  <h2>8. Contact</h2>
+  <p>For any questions regarding this privacy policy: <a href="mailto:contact@stellasecret.com">contact@stellasecret.com</a></p>
+  <footer>appDataFolder Browser · Privacy Policy · October 2026</footer>
+</div>
+</body>
+</html>
