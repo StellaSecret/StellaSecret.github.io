@@ -147,7 +147,7 @@ test.describe('Privacy index', () => {
 
   test('each app link has an id', async ({ page }) => {
     const expectedIds = [
-      'link-asthmetrack',
+      'link-chronitracker',
       'link-tripmind',
       'link-strategicjournal',
       'link-gametracker',
@@ -166,9 +166,9 @@ test.describe('Privacy index', () => {
 
 const APPS = [
   {
-    name: 'AsthmeTrack',
-    fr: '/privacy-pages/asthmetrack/privacy.html',
-    en: '/privacy-pages/asthmetrack/privacy-en.html',
+    name: 'ChroniTracker',
+    fr: '/privacy-pages/chronitracker/privacy.html',
+    en: '/privacy-pages/chronitracker/privacy-en.html',
   },
   {
     name: 'TripMind',

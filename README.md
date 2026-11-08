@@ -17,7 +17,7 @@ StellaSecret.github.io/
 │       ├── appdata-browser/
 │       │   ├── privacy.html         # French policy
 │       │   └── privacy-en.html      # English policy
-│       ├── asthmetrack/
+│       ├── chronitracker/
 │       │   ├── privacy.html         # French policy
 │       │   └── privacy-en.html      # English policy
 │       ├── cvgenerator/
@@ -30,7 +30,7 @@ StellaSecret.github.io/
     └── privacy.spec.js              # Playwright E2E tests (privacy pages)
 ```
 
-Apps covered: `appdata-browser`, `asthmetrack`, `cvgenerator`, `gametracker`, `peoplemodeler`, `smartshoppingcalculator`, `strategicjournal`, `tripmind`.
+Apps covered: `appdata-browser`, `chronitracker`, `cvgenerator`, `gametracker`, `peoplemodeler`, `smartshoppingcalculator`, `strategicjournal`, `tripmind`.
 
 ---
 

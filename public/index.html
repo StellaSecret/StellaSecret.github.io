@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; script-src 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self'">
 <title>StellaSecret — small tools, built around real problems</title>
-<meta name="description" content="TripMind, AsthmeTrack, GameTracker, SmartShoppingCalculator, PeopleModeler and appDataFolder Browser — small, focused tools built by StellaSecret to solve problems found in everyday life.">
+<meta name="description" content="TripMind, ChroniTracker, GameTracker, SmartShoppingCalculator, PeopleModeler and appDataFolder Browser — small, focused tools built by StellaSecret to solve problems found in everyday life.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lexend:wght@300;400;500;700&family=Outfit:wght@400;600;800&display=swap');
 
@@ -178,7 +178,7 @@ h1{
   transition:background-color .25s ease, box-shadow .25s ease;
 }
 .card.tripmind{ border-top:2px solid var(--blue); }
-.card.asthmetrack{ border-top:2px solid var(--em); }
+.card.chronitracker{ border-top:2px solid var(--em); }
 .card.shopping{ border-top:2px solid var(--amber); }
 .card.gametracker{ border-top:2px solid var(--org); }
 .card.peoplemodeler{ border-top:2px solid var(--indigo); }
@@ -191,7 +191,7 @@ h1{
   margin-bottom:10px;
 }
 .card.tripmind .eyebrow{ color:var(--cyan); }
-.card.asthmetrack .eyebrow{ color:var(--em); }
+.card.chronitracker .eyebrow{ color:var(--em); }
 .card.shopping .eyebrow{ color:var(--amber); }
 .card.gametracker .eyebrow{ color:var(--org); }
 .card.peoplemodeler .eyebrow{ color:var(--indigo); }
@@ -214,7 +214,7 @@ h1{
   padding:3px 9px; border-radius:10px;
 }
 .card.tripmind .tag{ background:rgba(6,182,212,.1); border:1px solid rgba(6,182,212,.2); color:var(--cyan); }
-.card.asthmetrack .tag{ background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.2); color:var(--em); }
+.card.chronitracker .tag{ background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.2); color:var(--em); }
 .card.shopping .tag{ background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.2); color:var(--amber); }
 .card.gametracker .tag{ background:rgba(249,115,22,.1); border:1px solid rgba(249,115,22,.2); color:var(--org); }
 .card.peoplemodeler .tag{ background:rgba(99,102,241,.1); border:1px solid rgba(99,102,241,.2); color:var(--indigo); }
@@ -238,7 +238,7 @@ h1{
   border:none; color:#fff;
   box-shadow:var(--btn-shadow-blue);
 }
-.card.asthmetrack .links a.primary{ background:linear-gradient(135deg,var(--em),#047857); box-shadow:var(--btn-shadow-em); }
+.card.chronitracker .links a.primary{ background:linear-gradient(135deg,var(--em),#047857); box-shadow:var(--btn-shadow-em); }
 .card.shopping .links a.primary{ background:linear-gradient(135deg,var(--amber),var(--amber-dim)); box-shadow:var(--btn-shadow-amber); }
 .card.gametracker .links a.primary{ background:linear-gradient(135deg,var(--org),var(--org-dim)); box-shadow:var(--btn-shadow-org); }
 .card.peoplemodeler .links a.primary{ background:linear-gradient(135deg,var(--indigo),var(--indigo-dim)); box-shadow:var(--btn-shadow-indigo); }
@@ -246,7 +246,7 @@ h1{
 
 .links a:hover{ transform:translateY(-1px); }
 .card.tripmind .links a:not(.primary):hover{ border-color:var(--blue); }
-.card.asthmetrack .links a:not(.primary):hover{ border-color:var(--em); }
+.card.chronitracker .links a:not(.primary):hover{ border-color:var(--em); }
 .card.shopping .links a:not(.primary):hover{ border-color:var(--amber); }
 .card.gametracker .links a:not(.primary):hover{ border-color:var(--org); }
 .card.peoplemodeler .links a:not(.primary):hover{ border-color:var(--indigo); }
@@ -314,7 +314,7 @@ footer a:hover{ color:var(--t1); }
 
 <section class="hero wrap">
   <h1 data-i18n="heroTitle">Small tools, built around real problems.</h1>
-  <p data-i18n="heroBody">We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Seven of those tools, below.</p>
+  <p data-i18n="heroBody">We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's chronic condition without paying for it. Seven of those tools, below.</p>
 </section>
 
 <div class="signature wrap" role="presentation" aria-hidden="true">
@@ -361,10 +361,10 @@ footer a:hover{ color:var(--t1); }
       </div>
     </article>
 
-    <article class="card asthmetrack">
+    <article class="card chronitracker">
       <div class="eyebrow" data-i18n="healthEyebrow">Health</div>
-      <h2 class="title">AsthmeTrack</h2>
-      <p class="desc" data-i18n="asthmetrackDesc">Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.</p>
+      <h2 class="title">ChroniTracker</h2>
+      <p class="desc" data-i18n="chronitrackerDesc">Peak flow, blood pressure and blood glucose, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.</p>
       <div class="tags">
         <span class="tag">Capacitor</span>
         <span class="tag">Drive sync</span>
@@ -373,8 +373,8 @@ footer a:hover{ color:var(--t1); }
       </div>
       <div class="links">
         <a class="primary" href="https://play.google.com/store/apps/details?id=com.stellasecret.asthmetrack" target="_blank" rel="noopener" data-i18n="linkPlayStore">Play Store</a>
-        <a href="https://stellasecret.github.io/AsthmeTrack/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
-        <a href="https://github.com/StellaSecret/AsthmeTrack" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
+        <a href="https://stellasecret.github.io/ChroniTracker/" target="_blank" rel="noopener" data-i18n="linkWebsite">Website</a>
+        <a href="https://github.com/StellaSecret/ChroniTracker" target="_blank" rel="noopener" data-i18n="linkSource">Source</a>
       </div>
     </article>
 
@@ -501,7 +501,7 @@ footer a:hover{ color:var(--t1); }
     en: {
       tagline: "SOFTWARE / SIDE PROJECTS",
       heroTitle: "Small tools, built around real problems.",
-      heroBody: "We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's asthma without paying for it. Seven of those tools, below.",
+      heroBody: "We write software when we run into friction we can't find a good answer for — too many tabs to plan a trip, no decent way to track a family member's chronic condition without paying for it. Seven of those tools, below.",
       sectionReleased: "Released",
       sectionTools: "Tools",
       sectionComingSoon: "Coming soon",
@@ -513,7 +513,7 @@ footer a:hover{ color:var(--t1); }
       cvgeneratorEyebrow: "Career",
       toolsEyebrow: "Utility",
       tripmindDesc: "One place for weather, air quality, pollen, road routes and public transit — instead of five separate websites before every trip. Runs entirely on free, public APIs, with no server in between.",
-      asthmetrackDesc: "Peak flow, SpO₂ and inhaler doses, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.",
+      chronitrackerDesc: "Peak flow, blood pressure and blood glucose, logged clearly enough to bring real numbers to a doctor's appointment instead of a guess. Free, no ads, and your data stays on your device by default.",
       shoppingDesc: "Compares everyday products by their real unit cost — toilet paper by price per gram of paper, protein powder by price per gram of protein. No ads, no account, works fully offline.",
       gametrackerDesc: "Score tracking for board games, with three game modes, player stats, and optional Google Drive backup. A premium tier adds real-time shared groups.",
       peoplemodelerDesc: "A private journal for understanding the people in your life a little better — their motivations, patterns, and what tends to set them off — to build empathy, not to act behind their back.",
@@ -538,7 +538,7 @@ footer a:hover{ color:var(--t1); }
     fr: {
       tagline: "LOGICIELS / PROJETS PERSONNELS",
       heroTitle: "De petits outils, pensés pour de vrais problèmes.",
-      heroBody: "Nous écrivons des logiciels quand nous tombons sur une friction sans bonne solution — trop d'onglets ouverts pour préparer un trajet, aucun bon moyen de suivre l'asthme d'un proche sans payer. Sept de ces outils, ci-dessous.",
+      heroBody: "Nous écrivons des logiciels quand nous tombons sur une friction sans bonne solution — trop d'onglets ouverts pour préparer un trajet, aucun bon moyen de suivre une maladie chronique d'un proche sans payer. Sept de ces outils, ci-dessous.",
       sectionReleased: "Disponibles",
       sectionTools: "Outils",
       sectionComingSoon: "À venir",
@@ -550,7 +550,7 @@ footer a:hover{ color:var(--t1); }
       cvgeneratorEyebrow: "Carrière",
       toolsEyebrow: "Utilitaire",
       tripmindDesc: "Météo, qualité de l'air, pollens, itinéraires routiers et transports en commun, réunis au même endroit, plutôt que cinq sites différents avant chaque trajet. Fonctionne uniquement avec des APIs publiques et gratuites, sans serveur intermédiaire.",
-      asthmetrackDesc: "Débit de pointe, SpO₂ et prises d'Easyhaler, suivis assez précisément pour apporter de vrais chiffres en consultation plutôt qu'une estimation. Gratuit, sans publicité, et vos données restent sur votre appareil par défaut.",
+      chronitrackerDesc: "Débit de pointe, tension artérielle et glycémie, suivis assez précisément pour apporter de vrais chiffres en consultation plutôt qu'une estimation. Gratuit, sans publicité, et vos données restent sur votre appareil par défaut.",
       shoppingDesc: "Compare le coût réel des produits du quotidien — le papier toilette au prix par gramme de papier, les protéines en poudre au prix par gramme de protéine. Sans publicité, sans compte, fonctionne entièrement hors ligne.",
       gametrackerDesc: "Suivi des scores pour les jeux de société, avec trois modes de jeu, des statistiques par joueur, et une sauvegarde optionnelle sur Google Drive. Une offre premium ajoute des groupes synchronisés en temps réel.",
       peoplemodelerDesc: "Un journal privé pour mieux comprendre les personnes de votre entourage — leurs motivations, leurs habitudes, ce qui les fait réagir — pour développer son empathie, pas pour agir dans leur dos.",
