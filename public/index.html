@@ -606,7 +606,12 @@ footer a:hover{ color:var(--t1); }
   });
 
   /* ---------- Language ---------- */
+  function normalizeLang(value){
+    return (value || '').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+
   function applyLang(lang){
+    lang = normalizeLang(lang);
     root.setAttribute('lang', lang);
     var dict = i18n[lang];
     document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -624,8 +629,7 @@ footer a:hover{ color:var(--t1); }
 
   function initLang(){
     var saved = localStorage.getItem('lang');
-    if(saved){ return saved; }
-    return (navigator.language || '').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+    return normalizeLang(saved || navigator.language);
   }
 
   var currentLang = initLang();
