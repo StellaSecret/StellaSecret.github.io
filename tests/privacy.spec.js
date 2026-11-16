@@ -53,17 +53,17 @@ test.describe('Landing page', () => {
     await expect(tools.locator('article.card')).toHaveCount(1);
   });
 
-  test('shows 1 coming-soon app card', async ({ page }) => {
+  test('shows 2 coming-soon app cards', async ({ page }) => {
     const soon = page.locator('section.section-block').filter({
       has: page.locator('[data-i18n="sectionComingSoon"]'),
     });
-    await expect(soon.locator('article.card')).toHaveCount(1);
+    await expect(soon.locator('article.card')).toHaveCount(2);
   });
 
   test('each card has a visible title', async ({ page }) => {
     const titles = page.locator('.card h2.title');
-    await expect(titles).toHaveCount(7);
-    for (let i = 0; i < 7; i++) {
+    await expect(titles).toHaveCount(8);
+    for (let i = 0; i < 8; i++) {
       await expect(titles.nth(i)).toBeVisible();
     }
   });
