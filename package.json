@@ -7,7 +7,7 @@
     "serve": "npx serve . -p 8080"
   },
   "devDependencies": {
-    "@playwright/test": "^1.65.0",
+    "@playwright/test": "^1.65.1",
     "serve": "^14.2.8",
     "wait-on": "^9.5.1"
   }
